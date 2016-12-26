@@ -2,5 +2,8 @@
 'use strict';
 
 module.exports = {
-  name: 'joda-core'
+  name: 'joda-core',
+  isDevelopingAddon: function() {
+    return true;
+  }
 };
