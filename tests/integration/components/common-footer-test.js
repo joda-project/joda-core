@@ -17,10 +17,11 @@ test('it renders', function(assert) {
 
   this.render(hbs `{{common-footer}}`);
 
+  let spacer = '                ';
   let render = '';
-  render += 'Joda Test powered by Joda'.replace(/\s+/g, '') + config.Joda.versions['joda-core'];
+  render += 'Joda Test powered by Joda ' + config.Joda.versions['joda-core'];
 
-  assert.equal(this.$().text().replace(/\s+/g, ''), "©2004-2016TadejNovak" + render);
+  assert.equal(this.$().text().trim().replace(/\n+/g, ''), "© 2016 Tadej Novak" + spacer + render);
 
   // Template block usage:
   this.render(hbs `
@@ -29,5 +30,5 @@ test('it renders', function(assert) {
     {{/common-footer}}
   `);
 
-  assert.equal(this.$().text().replace(/\s+/g, ''), 'template block text'.replace(/\s+/g, '') + render);
+  assert.equal(this.$().text().trim().replace(/\n+/g, ''), 'template block text' + spacer + render);
 });

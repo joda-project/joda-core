@@ -5,15 +5,10 @@
         {{#if hasBlock}}
           {{yield}}
         {{else}}
-          &copy; 2004-2016 <a xmlns:cc="http://creativecommons.org/ns#" href="https://tano.si" property="cc:attributionName" rel="cc:attributionURL">Tadej&nbsp;Novak</a>
+          {{joda.copyright}}
         {{/if}}
         <br>
-        {{#if joda.branded}}
-          {{joda.appName}} powered
-        {{else}}
-          Powered
-        {{/if}}
-        by Joda {{joda.versionFrontend}} {{joda.testValue}}
+        {{#if joda.branded}}{{joda.appName}} powered{{else}}Powered{{/if}} by Joda {{joda.versionFrontend}}
       </div>
     </div>
     <div class="level-right">
