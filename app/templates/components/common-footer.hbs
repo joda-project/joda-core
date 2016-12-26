@@ -1,0 +1,25 @@
+<div class="container">
+  <nav class="level">
+    <div class="level-left">
+      <div class="level-item has-special-links">
+        {{#if hasBlock}}
+          {{yield}}
+        {{else}}
+          &copy; 2004-2016 <a xmlns:cc="http://creativecommons.org/ns#" href="https://tano.si" property="cc:attributionName" rel="cc:attributionURL">Tadej&nbsp;Novak</a>
+        {{/if}}
+        <br>
+        {{#if joda.branded}}
+          {{joda.appName}} powered
+        {{else}}
+          Powered
+        {{/if}}
+        by Joda {{joda.versionFrontend}} {{joda.testValue}}
+      </div>
+    </div>
+    <div class="level-right">
+      <div class="level-item has-special-links">
+
+      </div>
+    </div>
+  </nav>
+</div>

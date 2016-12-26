@@ -1,6 +1,8 @@
 /* jshint node: true */
 'use strict';
 
+var getVersion = require('git-repo-version');
+
 module.exports = {
   name: 'joda-core',
   config: function() {
@@ -9,9 +11,14 @@ module.exports = {
       versions: {}
     };
 
-    var version = require('git-repo-version')(null, this.project.root);
+    let path = this.project.root;
+    if (this.project.pkg.name !== 'joda-core') {
+      path = this.project.addonPackages['joda-core'].path;
+    }
+
+    var version = getVersion(null, path);
     if (version) {
-      joda.versions[this.project.pkg.name] = version;
+      joda.versions['joda-core'] = version;
     }
 
     return {

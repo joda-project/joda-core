@@ -21,5 +21,7 @@ test('should correctly display constants', function(assert) {
 
   assert.equal(service.get('appName'), 'Joda Test');
 
+  assert.equal(service.get('branded'), true);
+
   assert.equal(service.get('versionFrontend'), config.Joda.versions['joda-core']);
 });
