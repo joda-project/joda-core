@@ -1,0 +1,22 @@
+<header class="nav nav-primary has-shadow">
+  <div class="container">
+    <div class="nav-left">
+      {{#link-to 'index' class="nav-item nav-title is-active" activeClass="" }}
+        <span class="logo"></span>
+        {{joda.appName}}
+      {{/link-to}}
+    </div>
+    <span class="nav-toggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </span>
+    <div class="nav-right nav-menu">
+      {{#if session.isAuthenticated}}
+        <a class="nav-item" {{action 'invalidateSession'}}>Logout {{currentUser.user.username}}</a>
+      {{else}}
+        {{#link-to 'login' class="nav-item" activeClass="is-active"}}Login{{/link-to}}
+      {{/if}}
+    </div>
+  </div>
+</header>

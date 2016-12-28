@@ -9,7 +9,9 @@ module.exports = {
     let joda = {
       appName: 'Joda',
       copyright: '&copy; 2016 Tadej Novak',
-      versions: {}
+      versions: {},
+      backendUri: process.env.BACKEND_URI,
+      authKey: process.env.AUTH_KEY
     };
 
     let path = this.project.root;

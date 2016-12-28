@@ -5,6 +5,7 @@ export default Ember.Component.extend({
 
   tagName: 'section',
   classNames: ['hero', 'is-primary', 'is-fullheight', 'has-gradient'],
-  classNameBindings: ['errorPage'],
-  errorPage: false
+  classNameBindings: ['errorPage', 'loginPage'],
+  errorPage: false,
+  loginPage: false
 });
