@@ -1,0 +1,12 @@
+=retina
+  @media screen and #{$media-retina}
+    @content
+
+=hover-animation
+  transition: color 0.2s, background 0.2s, border-color 0.2s
+
+=background($file, $extra)
+  background: url($file) unquote($extra)
+
+=background-image($file)
+  background-image: url($file)

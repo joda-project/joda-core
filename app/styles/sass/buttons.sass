@@ -1,0 +1,25 @@
+a:not(.button)
+  +hover-animation
+
+.button
+  +hover-animation
+
+  @each $name, $pair in $colors
+    $color: nth($pair, 1)
+    $color-invert: nth($pair, 2)
+
+    &.is-#{$name}
+      &.is-hero
+        background-color: $color
+        border-width: 1px
+        border-color: $white
+        color: $white
+
+        &:hover,
+        &:focus,
+        &.is-active
+          background-color: $white
+          color: $color
+
+        &:active
+          color: darken($color, 10%)

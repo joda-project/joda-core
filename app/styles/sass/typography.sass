@@ -1,0 +1,62 @@
+body
+  -webkit-text-size-adjust: 100%
+
+\::selection
+  color: #fff
+  background: $brand-primary
+
+p
+  margin-bottom: 0.8em
+
+.title
+  color: $brand-secondary
+  font-weight: $weight-title-bold
+
+  &:not(:first-child)
+    padding-top: 10px
+
+  &:not(:last-child)
+    margin-bottom: 15px
+
+@each $size in $sizes
+  $i: index($sizes, $size)
+  $ip: $i + 1
+
+  h#{$i}
+    @extend .title
+
+    font-size: $size
+
+  h#{$i} + h#{$i},
+  h#{$i} + h#{$ip}
+    padding-top: 0 !important
+
+.heading
+  text-align: center
+  text-transform: none
+  margin-bottom: 30px
+
+  .subtitle
+    font-size: $size-4
+    margin-top: -10px
+
+.footer
+  font-size: 14px
+
+  a
+    border-bottom: 0 !important
+
+    &:hover,
+    &:visited:hover
+      color: $link-hover
+
+.error-page
+  h1
+    font-size: 96px
+
+  h2
+    font-size: 44px
+
+  p
+    font-size: 24px
+    margin-bottom: 1.5em
