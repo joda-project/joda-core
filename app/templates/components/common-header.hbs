@@ -1,22 +1,48 @@
-<header class="nav nav-primary has-shadow">
-  <div class="container">
-    <div class="nav-left">
-      {{#link-to 'index' class="nav-item nav-title is-active" activeClass="" }}
-        <span class="logo"></span>
-        {{joda.appName}}
-      {{/link-to}}
+<div class="hero-head">
+  <header class="nav">
+    <div class="container">
+      <div class="nav-left">
+        {{#link-to 'index' class="nav-item nav-title is-active" activeClass="" }}
+          <span class="logo"></span> {{joda.appName}}
+        {{/link-to}}
+      </div>
+      <span class="nav-toggle">
+          <span></span><span></span><span></span>
+      </span>
+      <div class="nav-right nav-menu">
+        {{#if session.isAuthenticated}}
+          <a class="nav-item" {{action 'invalidateSession'}}>Logout {{currentUser.user.username}}</a>
+        {{else}}
+          {{#link-to 'login' class="nav-item" activeClass="is-active" }}Login{{/link-to}}
+        {{/if}}
+      </div>
     </div>
-    <span class="nav-toggle">
-      <span></span>
-      <span></span>
-      <span></span>
-    </span>
-    <div class="nav-right nav-menu">
-      {{#if session.isAuthenticated}}
-        <a class="nav-item" {{action 'invalidateSession'}}>Logout {{currentUser.user.username}}</a>
-      {{else}}
-        {{#link-to 'login' class="nav-item" activeClass="is-active"}}Login{{/link-to}}
+  </header>
+</div>
+
+{{#if title}}
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <h1 class="title">
+        {{title}}
+      </h1>
+      {{#if subtitle}}
+        <h2 class="subtitle">
+          {{subtitle}}
+        </h2>
       {{/if}}
     </div>
   </div>
-</header>
+{{/if}}
+
+{{#if hasBlock}}
+  <div class="hero-foot">
+    <nav class="tabs is-boxed is-fullwidth">
+      <div class="container">
+        <ul>
+          {{yield}}
+        </ul>
+      </div>
+    </nav>
+  </div>
+{{/if}}

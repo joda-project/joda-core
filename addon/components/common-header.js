@@ -5,6 +5,12 @@ export default Ember.Component.extend({
   currentUser: Ember.inject.service(),
   joda: Ember.inject.service(),
 
+  tagName: 'section',
+  classNames: ['hero', 'is-primary'],
+
+  title: '',
+  subtitle: '',
+
   actions: {
     invalidateSession() {
       this.get('session').invalidate();

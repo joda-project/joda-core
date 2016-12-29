@@ -16,7 +16,9 @@ test('it renders', function(assert) {
   this.render(hbs `{{common-header}}`);
 
   assert.equal(this.$().text().trim().replace(/\n+/g, ''),
-"Joda Test                                          Login");
+"Joda Test                                            Login");
 
   // TODO: authentication
+  // TODO: title
+  // TODO: submenu
 });
