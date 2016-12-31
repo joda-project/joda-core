@@ -9,6 +9,7 @@ module.exports = {
     let joda = {
       appName: 'Joda',
       copyright: '&copy; 2016 Tadej Novak',
+      color: '#207178',
       features: {},
       versions: {},
       backendUri: process.env.BACKEND_URI,
@@ -28,6 +29,13 @@ module.exports = {
     return {
       Joda: joda
     };
+  },
+  contentFor: function(type, config) {
+    if (type === 'joda.appName') {
+      return config.Joda.appName;
+    } else if (type === 'joda.color') {
+      return config.Joda.color;
+    }
   },
   isDevelopingAddon: function() {
     return true;
