@@ -9,6 +9,7 @@ module.exports = {
     let joda = {
       appName: 'Joda',
       copyright: '&copy; 2016 Tadej Novak',
+      features: {},
       versions: {},
       backendUri: process.env.BACKEND_URI,
       authKey: process.env.AUTH_KEY

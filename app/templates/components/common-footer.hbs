@@ -13,7 +13,11 @@
     </div>
     <div class="level-right">
       <div class="level-item has-special-links">
-
+        {{#each joda.links as |link|}}
+          {{#link-to link.id activeClass="" }}
+            {{link.title}}
+          {{/link-to}}
+        {{/each}}
       </div>
     </div>
   </nav>

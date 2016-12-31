@@ -10,6 +10,12 @@
           <span></span><span></span><span></span>
       </span>
       <div class="nav-right nav-menu">
+        {{#each joda.links as |link|}}
+          {{#link-to link.id class="nav-item" activeClass="is-active" }}
+            {{link.title}}
+          {{/link-to}}
+        {{/each}}
+
         {{#if session.isAuthenticated}}
           <a class="nav-item" {{action 'invalidateSession'}}>Logout {{currentUser.user.username}}</a>
         {{else}}
