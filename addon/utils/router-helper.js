@@ -5,6 +5,12 @@ const {
 } = config;
 
 export default function routerHelper(self) {
+  self.route('404', {
+    path: '*path'
+  });
+  self.route('login');
+  self.route('about');
+
   let features = Joda.features;
   for (let feature in features) {
     let info = features[feature];

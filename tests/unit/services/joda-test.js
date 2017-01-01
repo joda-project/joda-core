@@ -2,12 +2,21 @@ import {
   moduleFor,
   test
 } from 'ember-qunit';
+import {
+  startMirage
+} from 'dummy/initializers/ember-cli-mirage';
 
 import config from '../../../config/environment';
 
 moduleFor('service:joda', 'Unit | Service | joda', {
   // Specify the other units that are required for this test.
-  // needs: ['service:foo']
+  needs: ['service:ajax'],
+  beforeEach() {
+    this.server = startMirage();
+  },
+  afterEach() {
+    this.server.shutdown();
+  }
 });
 
 test('it exists', function(assert) {

@@ -19,6 +19,6 @@ export default OAuth2PasswordGrant.extend({
     }
   }),
 
-  serverTokenEndpoint: Joda.backendUri + '/auth/token/',
-  serverTokenRevocationEndpoint: Joda.backendUri + '/auth/revoke_token/'
+  serverTokenEndpoint: (Joda.backendUri ? Joda.backendUri : '') + '/auth/token/',
+  serverTokenRevocationEndpoint: (Joda.backendUri ? Joda.backendUri : '') + '/auth/revoke_token/'
 });

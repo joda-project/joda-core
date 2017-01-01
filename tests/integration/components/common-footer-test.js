@@ -3,11 +3,20 @@ import {
   test
 } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
+import {
+  startMirage
+} from 'dummy/initializers/ember-cli-mirage';
 
 import config from '../../../config/environment';
 
 moduleForComponent('common-footer', 'Integration | Component | common footer', {
-  integration: true
+  integration: true,
+  beforeEach() {
+    this.server = startMirage();
+  },
+  afterEach() {
+    this.server.shutdown();
+  }
 });
 
 test('it renders', function(assert) {
@@ -19,7 +28,7 @@ test('it renders', function(assert) {
 
   let spacer = '                ';
   let render = '';
-  render += 'Joda Test powered by Joda ' + config.Joda.versions['joda-core'];
+  render += 'Joda Test powered by Joda ' + config.Joda.versions['joda-core'] + '                            Administration';
 
   assert.equal(this.$().text().trim().replace(/\n+/g, ''), "© 2016 Tadej Novak" + spacer + render);
 

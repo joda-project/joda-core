@@ -8,6 +8,6 @@ const {
 
 export default DS.JSONAPIAdapter.extend(DataAdapterMixin, {
   namespace: 'api',
-  host: Joda.backendUri,
+  host: Joda.backendUri ? Joda.backendUri : '',
   authorizer: 'authorizer:oauth2'
 });

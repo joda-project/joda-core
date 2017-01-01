@@ -3,9 +3,18 @@ import {
   test
 } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
+import {
+  startMirage
+} from 'dummy/initializers/ember-cli-mirage';
 
 moduleForComponent('common-header', 'Integration | Component | common header', {
-  integration: true
+  integration: true,
+  beforeEach() {
+    this.server = startMirage();
+  },
+  afterEach() {
+    this.server.shutdown();
+  }
 });
 
 test('it renders', function(assert) {
