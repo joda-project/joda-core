@@ -1,0 +1,47 @@
+$ember-power-select-border-color: $grey-lighter
+$ember-power-select-focus-border-color: $primary
+$ember-power-select-highlighted-background: $primary
+$ember-power-select-selected-background: hsl(0, 0%, 90%)
+
+$ember-power-select-multiple-option-border: 0
+$ember-power-select-multiple-option-border-radius: 290486px
+$ember-power-select-multiple-selection-background-color: whitesmoke
+$ember-power-select-multiple-selection-color: $text
+
+@import ember-power-select
+
+.ember-power-select-trigger
+  @extend .input
+
+.ember-power-select-trigger--active
+  &:hover
+    border-color: $ember-power-select-focus-border-color
+
+.ember-power-select-search-input
+  &:focus
+    border-color: $ember-power-select-border-color
+    outline: none
+
+.ember-power-select-multiple-option
+  @extend .tag
+
+  line-height: 16px
+  font-size: 14px
+  padding: 0 10px
+  display: inline-flex
+  flex-direction: row-reverse
+
+.ember-power-select-clear-btn,
+.ember-power-select-multiple-remove-btn
+  @extend .delete
+
+  color: transparent
+  height: 16px
+  width: 16px
+
+  &:not(:hover)
+    opacity: 1
+
+.ember-power-select-multiple-remove-btn
+  margin-left: 4px
+  margin-right: -6px
