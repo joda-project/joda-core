@@ -1,6 +1,8 @@
 import Ember from 'ember';
+import layout from '../templates/components/common-header';
 
 export default Ember.Component.extend({
+  layout,
   session: Ember.inject.service(),
   currentUser: Ember.inject.service(),
   joda: Ember.inject.service(),
