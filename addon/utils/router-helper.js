@@ -21,6 +21,12 @@ export default function routerHelper(self) {
       }, function() {
         this.route('loading');
       });
+      this.route('view', {
+        path: ':resource_id'
+      });
+      this.route('edit', {
+        path: ':resource_id/edit'
+      });
     });
   }
 }
