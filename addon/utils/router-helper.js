@@ -11,6 +11,12 @@ export default function routerHelper(self) {
   self.route('login');
   self.route('about');
 
+  self.route('manage', function() {
+    this.route('files');
+    this.route('unverified');
+    this.route('upload');
+  });
+
   let features = Joda.features;
   for (let feature in features) {
     let info = features[feature];

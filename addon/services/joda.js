@@ -63,6 +63,7 @@ export default Ember.Service.extend({
       }
 
       out.push({
+        id: feature,
         title: info.title,
         versionFrontend: versionFrontend,
         versionBackend: versionBackend

@@ -1,0 +1,29 @@
+{{#common-header title="Manage" }}
+  {{#link-to 'manage.index' tagName="li" activeClass="is-active" }}
+    {{#link-to 'manage.index'}}
+      Summary
+    {{/link-to}}
+  {{/link-to}}
+
+  {{#link-to 'manage.unverified' tagName="li" activeClass="is-active" }}
+    {{#link-to 'manage.unverified' }}
+      Unverified
+    {{/link-to}}
+  {{/link-to}}
+
+  {{#link-to 'manage.files' tagName="li" activeClass="is-active" }}
+    {{#link-to 'manage.files' }}
+      Files
+    {{/link-to}}
+  {{/link-to}}
+
+  {{#link-to 'manage.upload' tagName="li" activeClass="is-active" }}
+    {{#link-to 'manage.upload' }}
+      Upload
+    {{/link-to}}
+  {{/link-to}}
+{{/common-header}}
+
+{{outlet}}
+
+{{common-footer}}

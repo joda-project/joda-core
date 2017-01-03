@@ -16,6 +16,10 @@
           {{/link-to}}
         {{/each}}
 
+        {{#link-to 'manage' class="nav-item" activeClass="is-active" }}
+          Manage
+        {{/link-to}}
+
         {{#if session.isAuthenticated}}
           <a class="nav-item" {{action 'invalidateSession'}}>Logout {{currentUser.user.username}}</a>
         {{else}}
