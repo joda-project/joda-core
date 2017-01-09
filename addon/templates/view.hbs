@@ -1,0 +1,16 @@
+<div class="file-view">
+  <section class="hero is-primary has-gradient">
+    <div class="hero-body">
+      {{model.name}}
+    </div>
+  </section>
+  {{#if model.isImage}}
+    {{image-viewer image=fileNameInline}}
+  {{else}}
+    <div class="object-wrapper">
+      <object width="100%" height="100%" type="{{model.mimeType}}" data="{{fileNameInline}}">
+        <p>It appears you don't have a PDF plugin for this browser.</p>
+      </object>
+    </div>
+  {{/if}}
+</div>

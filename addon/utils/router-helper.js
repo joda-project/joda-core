@@ -17,6 +17,10 @@ export default function routerHelper(self) {
     this.route('upload');
   });
 
+  self.route('view', {
+    path: 'view/:resource_id'
+  });
+
   let features = Joda.features;
   for (let feature in features) {
     let info = features[feature];

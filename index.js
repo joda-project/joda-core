@@ -39,5 +39,14 @@ module.exports = {
   },
   isDevelopingAddon: function() {
     return true;
+  },
+  afterInstall: function() {
+    return this.addBowerPackageToProject('ImageViewer');
+  },
+  included: function(app) {
+    this._super.included.apply(this, arguments);
+
+    app.import(app.bowerDirectory + '/ImageViewer/imageviewer.css');
+    app.import(app.bowerDirectory + '/ImageViewer/imageviewer.min.js');
   }
 };
