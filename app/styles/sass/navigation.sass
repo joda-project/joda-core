@@ -1,22 +1,14 @@
 .nav
-  .container
-    box-sizing: content-box
-    padding: 0 20px
-
-    &.is-reversed
-      +mobile
-        padding-right: 20px
-        padding-left: 0
-
-    +mobile
-      padding-right: 0
-
   .nav-title
     line-height: 1
     font-size: $size-5
     font-weight: 500
 
 .footer .level
+  .level-left
+    .level-item:first-of-type
+      display: block
+
   +tablet
     .level-left
       align-items: stretch

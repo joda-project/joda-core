@@ -1,0 +1,21 @@
+<section class="section">
+  <div class="container">
+    <h2>All content</h2>
+    <div class="columns is-reversed">
+      {{#filter-sidebar search=search}}
+        <div class="panel-block">
+          <p class="control has-icon">
+            {{#multiple-select options=model.tags selected=tagsList placeholder="Tags" searchField="name" onchange=(action (mut tagsList)) as |tag| }}
+              {{tag.name}}
+            {{/multiple-select}}
+            <span class="icon"><i class="fa fa-tag"></i></span>
+          </p>
+        </div>
+      {{/filter-sidebar}}
+
+      <div class="column">
+        {{outlet}}
+      </div>
+    </div>
+  </div>
+</section>

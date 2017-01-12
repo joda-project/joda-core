@@ -5,6 +5,18 @@ const {
 } = config;
 
 export default function routerHelper(self) {
+  self.route('index', {
+    path: ''
+  }, function() {
+    this.route('index', {
+      path: ''
+    }, function() {
+      this.route('index', {
+        path: ''
+      });
+    });
+  });
+
   self.route('404', {
     path: '*path'
   });

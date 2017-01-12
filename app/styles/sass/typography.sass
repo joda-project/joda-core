@@ -5,19 +5,6 @@ body
   color: #fff
   background: $brand-primary
 
-p
-  margin-bottom: 0.8em
-
-.title
-  color: $brand-secondary
-  font-weight: $weight-title-bold
-
-  &:not(:first-child)
-    padding-top: 10px
-
-  &:not(:last-child)
-    margin-bottom: 15px
-
 @each $size in $sizes
   $i: index($sizes, $size)
   $ip: $i + 1
@@ -31,20 +18,9 @@ p
   h#{$i} + h#{$ip}
     padding-top: 0 !important
 
-.heading
-  text-align: center
-  text-transform: none
-  margin-bottom: 30px
-
-  .subtitle
-    font-size: $size-4
-    margin-top: -10px
-
 .footer
-  font-size: 14px
-
   a
-    border-bottom: 0 !important
+    color: $grey-darker
 
     &:hover,
     &:visited:hover

@@ -1,0 +1,19 @@
+<nav class="panel">
+  <p class="panel-heading">
+    Filter
+  </p>
+  <div class="panel-block">
+    <p class="control has-icon">
+      {{input class="input" type="text" placeholder="Search" value=search}}
+      <span class="icon"><i class="fa fa-search"></i></span>
+    </p>
+  </div>
+
+  {{yield}}
+
+  <div class="panel-block">
+    <button class="button is-primary is-outlined is-fullwidth is-small">
+      Reset all filters
+    </button>
+  </div>
+</nav>
