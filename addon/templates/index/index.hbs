@@ -2,7 +2,7 @@
   <div class="container">
     <h2>All content</h2>
     <div class="columns is-reversed">
-      {{#filter-sidebar search=search}}
+      {{#filter-sidebar search=search reset=(action "resetFilters")}}
         <div class="panel-block">
           <p class="control has-icon">
             {{#multiple-select options=model.tags selected=tagsList placeholder="Tags" searchField="name" onchange=(action (mut tagsList)) as |tag| }}

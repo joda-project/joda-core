@@ -15,6 +15,7 @@ export default Ember.Controller.extend({
   tagsObserver: Ember.observer('tags', function() {
     let tags = this.get('tags');
     if (!tags) {
+      this.set('tagsList', []);
       return;
     }
 
@@ -35,5 +36,12 @@ export default Ember.Controller.extend({
       }
     }
     this.set('tags', list.length ? list.join(',') : null);
-  })
+  }),
+
+  actions: {
+    resetFilters: function() {
+      this.set('search', null);
+      this.set('tags', null);
+    }
+  }
 });
