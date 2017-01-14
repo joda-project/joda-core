@@ -1,5 +1,14 @@
 <section class="section">
   <div class="container">
-    UNVERIFIED
+    <h2>Unverified content</h2>
+    <div class="columns is-reversed">
+      {{#filter-sidebar search=search reset=(action "resetFilters")}}
+
+      {{/filter-sidebar}}
+
+      <div class="column">
+        {{outlet}}
+      </div>
+    </div>
   </div>
 </section>

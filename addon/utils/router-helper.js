@@ -29,7 +29,11 @@ export default function routerHelper(self) {
         path: ''
       });
     });
-    this.route('unverified');
+    this.route('unverified', function() {
+      this.route('index', {
+        path: ''
+      });
+    });
     this.route('upload');
   });
 

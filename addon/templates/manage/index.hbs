@@ -11,7 +11,7 @@
   <div class="container">
     <h3>Latest unverified resources</h3>
     {{#each model.content as |content|}}
-      {{content.title}}
+      {{content-entry content}}
     {{else}}
       <i>No resources need verification.</i>
     {{/each}}
@@ -30,7 +30,7 @@
   <div class="container">
     <h3>Latest files with no resources</h3>
     {{#each model.files as |file|}}
-      {{file.name}}
+      {{file-entry file}}
     {{else}}
       <i>All files have at least one resource assigned.</i>
     {{/each}}

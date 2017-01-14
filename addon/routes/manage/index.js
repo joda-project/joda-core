@@ -6,10 +6,13 @@ export default Ember.Route.extend({
   model() {
     return Ember.RSVP.hash({
       content: this.get('store').query('content', {
-        'validated': false
+        'include': 'files',
+        'validated': false,
+        'page_size': 5
       }),
       files: this.get('store').query('file', {
-        'content_count': 0
+        'content_count': 0,
+        'page_size': 5
       }),
     });
   }
