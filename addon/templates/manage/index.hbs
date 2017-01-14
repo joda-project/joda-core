@@ -1,6 +1,6 @@
 <section class="section">
   <div class="container">
-    <h3>Add resources</h3>
+    <h3>Add documents</h3>
     {{#link-to 'manage.upload' class="button is-primary is-medium" }}
       Upload
     {{/link-to}}
@@ -9,17 +9,17 @@
 
 <section class="section">
   <div class="container">
-    <h3>Latest unverified resources</h3>
+    <h3>Latest unverified documents</h3>
     {{#each model.content as |content|}}
       {{content-entry content}}
     {{else}}
-      <i>No resources need verification.</i>
+      <i>No documents need verification.</i>
     {{/each}}
 
     {{#if (compare model.content.meta.pagination.count '>' 5)}}
       <p>
         {{#link-to 'manage.unverified' class="button is-link" }}
-          All unverified resources
+          All unverified documents
         {{/link-to}}
       </p>
     {{/if}}
@@ -28,17 +28,17 @@
 
 <section class="section">
   <div class="container">
-    <h3>Latest files with no resources</h3>
+    <h3>Latest files with no documents</h3>
     {{#each model.files as |file|}}
       {{file-entry file}}
     {{else}}
-      <i>All files have at least one resource assigned.</i>
+      <i>All files have at least one document assigned.</i>
     {{/each}}
 
     {{#if (compare model.files.meta.pagination.count '>' 5)}}
       <p>
         {{#link-to 'manage.files' class="button is-link" }}
-          All files with no resources
+          All files with no documents
         {{/link-to}}
       </p>
     {{/if}}

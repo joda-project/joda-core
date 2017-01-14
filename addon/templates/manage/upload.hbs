@@ -1,22 +1,22 @@
 <section class="section">
   <div class="container">
-    <h3>Upload resources</h3>
-    <p>Choose a resource type you want to upload and then browse for files. Files can be in PDF, JPEG or PNG format, up to 300 MiB in total.</p>
+    <h3>Upload documents</h3>
+    <p>Choose a document type you want to upload and then browse for files. Files can be in PDF, JPEG or PNG format, up to 300 MiB in total.</p>
 
-    <label class="label">Create resources after upload</label>
+    <label class="label">Create documents after upload</label>
     <p class="control">
-      {{#radio-button value=null groupValue=resourceType class="radio" }}
+      {{#radio-button value=null groupValue=contentType class="radio" }}
         Do not create
       {{/radio-button}}
       {{#each joda.features as |feature|}}
-        {{#radio-button value=feature.id groupValue=resourceType class="radio" }}
+        {{#radio-button value=feature.id groupValue=contentType class="radio" }}
           {{feature.title}}
         {{/radio-button}}
       {{/each}}
     </p>
 
     <label class="label">Files</label>
-    <p class="control">{{file-upload action="uploadCompleted" errorMessage=errorMessage progress=progress resourceType=resourceType }}</p>
+    <p class="control">{{file-upload action="uploadCompleted" errorMessage=errorMessage progress=progress contentType=contentType }}</p>
     <p>&nbsp;</p>
 
     {{#if errorMessage}}
