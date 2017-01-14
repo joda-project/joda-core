@@ -4,7 +4,10 @@ export default Ember.Route.extend({
   model: function(params) {
     Ember.$.extend(params, this.paramsFor('index.index'));
 
-    var properties = {};
+    var properties = {
+      'include': 'files'
+    };
+
     if (params.search) {
       properties['search'] = params.search;
     }

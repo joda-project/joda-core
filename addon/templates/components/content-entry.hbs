@@ -1,12 +1,17 @@
 <div class="media-content">
   <div class="content">
     <p>
-      <strong>{{content.title}}</strong> <small>{{content.contentType}}</small>
+      <strong>{{content.title}}</strong>
+      <small class="is-primary">{{content.contentType}}</small>
       <br>
-
+      {{#each content.tags as |tag|}}
+        {{tag-label tag}}
+      {{/each}}
     </p>
   </div>
 </div>
 <div class="media-right has-text-centered">
-  <span class="icon is-medium"><i class="fa fa-file-pdf-o"></i></span>
+  {{#each content.files as |file|}}
+    {{file-icon-link file}}
+  {{/each}}
 </div>
