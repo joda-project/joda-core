@@ -24,7 +24,11 @@ export default function routerHelper(self) {
   self.route('about');
 
   self.route('manage', function() {
-    this.route('files');
+    this.route('files', function() {
+      this.route('index', {
+        path: ''
+      });
+    });
     this.route('unverified');
     this.route('upload');
   });

@@ -1,5 +1,21 @@
 <section class="section">
   <div class="container">
-    FILES
+    <h2>Files</h2>
+    <div class="columns is-reversed">
+      {{#filter-sidebar search=search reset=(action "resetFilters")}}
+        <div class="panel-block">
+          <p class="control has-icon">
+            {{#single-select options=types selected=fileTypeItem placeholder="File type" searchEnabled=false onchange=(action (mut fileTypeItem)) as |type| }}
+              {{type.name}}
+            {{/single-select}}
+            <span class="icon"><i class="fa fa-file-o"></i></span>
+          </p>
+        </div>
+      {{/filter-sidebar}}
+
+      <div class="column">
+        {{outlet}}
+      </div>
+    </div>
   </div>
 </section>

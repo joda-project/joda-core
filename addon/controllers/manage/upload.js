@@ -10,7 +10,7 @@ export default Ember.Controller.extend({
       if (resourceType) {
         if (data.data.length === 1) {
           let file = data.data[0];
-          let resource = file.relationships.content_set.data[0];
+          let resource = file.relationships.content.data[0];
           this.transitionToRoute(resourceType + '.edit', resource.id);
         } else {
           this.transitionToRoute('manage.unverified');

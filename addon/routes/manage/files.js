@@ -3,7 +3,14 @@ import Ember from 'ember';
 export default Ember.Route.extend({
   titleToken: 'Files',
 
-  model: function() {
-    return this.get('store').findAll('file');
+  queryParams: {
+    'search': {
+      refreshModel: true,
+      replace: true
+    },
+    'file_type': {
+      refreshModel: true,
+      replace: true
+    }
   }
 });

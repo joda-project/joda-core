@@ -1,0 +1,11 @@
+<span class="icon is-medium">
+  {{#link-to "view" file activeClass="" target="_blank" }}
+    {{#if file.isImage}}
+      <i class="fa fa-file-image-o"></i>
+    {{else}}
+      <i class="fa fa-file-pdf-o"></i>
+    {{/if}}
+  {{/link-to}}
+</span>
+<br>
+<small>{{file.sizeReadable}}</small>

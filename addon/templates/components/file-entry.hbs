@@ -1,0 +1,12 @@
+<div class="media-content">
+  <div class="content">
+    <p>
+      <strong>{{file.name}}</strong> <small class="is-primary">{{file.fileType}}</small>
+      <br>
+      <small>contents: {{file.contentCount}} · uploaded at: {{moment-format file.added}}</small>
+    </p>
+  </div>
+</div>
+<div class="media-right has-text-centered">
+  {{file-icon-link file}}
+</div>

@@ -21,7 +21,9 @@
     "bulma": "^0.3.0",
     "ember-cli-babel": "^5.1.7",
     "ember-cli-htmlbars": "^1.0.10",
+    "ember-cli-moment-shim": "^3.0.1",
     "ember-cli-pagination": "^2.2.3",
+    "ember-moment": "^7.3.0",
     "ember-radio-button": "^1.1.1",
     "ember-simple-auth": "^1.2.0-beta.1",
     "ember-uploader": "^1.2.2"
