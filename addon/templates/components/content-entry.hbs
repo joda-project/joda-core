@@ -12,6 +12,12 @@
 </div>
 <div class="media-right has-text-centered">
   {{#each content.files as |file|}}
-    {{file-icon-link file}}
+    {{#if file.public}}
+      {{file-icon-link file}}
+    {{else}}
+      {{#if session.isAuthenticated}}
+        {{file-icon-link file}}
+      {{/if}}
+    {{/if}}
   {{/each}}
 </div>

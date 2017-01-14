@@ -3,6 +3,7 @@ import layout from '../templates/components/content-entry';
 
 const ContentEntry = Ember.Component.extend({
   layout,
+  session: Ember.inject.service(),
   tagName: 'article',
   classNames: ['media', 'is-vertical-centered']
 });
