@@ -25,3 +25,11 @@ This README outlines the details of collaborating on this Ember addon.
 * `ember build`
 
 For more information on using ember-cli, visit [https://ember-cli.com/](https://ember-cli.com/).
+
+
+## Copyright info
+Copyright (C) 2016-2017 Tadej Novak
+
+This project may be used under the terms of the
+GNU Affero General Public License version 3.0 as published by the
+Free Software Foundation and appearing in the file [LICENSE.md](LICENSE.md).

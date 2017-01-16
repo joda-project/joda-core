@@ -5,7 +5,7 @@
   "keywords": [
     "ember-addon"
   ],
-  "license": "MIT",
+  "license": "AGPLv3+",
   "author": "Tadej Novak <tadej@tano.si>",
   "directories": {
     "doc": "doc",
