@@ -7,6 +7,6 @@ export default Ember.Route.extend(SessionLoginStayMixin, {
   },
 
   model: function(params) {
-    return this.store.findRecord('file', params.content_id);
+    return this.store.findRecord('file', params.document_id);
   },
 });

@@ -12,6 +12,6 @@ export default Ember.Route.extend({
       properties['search'] = params.search;
     }
 
-    return this.get('store').query('content', properties);
+    return this.get('store').query('document', properties);
   }
 });

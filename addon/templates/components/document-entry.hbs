@@ -1,17 +1,17 @@
 <div class="media-content">
   <div class="content">
     <p>
-      <strong>{{content.title}}</strong>
-      <small class="is-primary">{{content.contentType}}</small>
+      <strong>{{document.title}}</strong>
+      <small class="is-primary">{{document.documentType}}</small>
       <br>
-      {{#each content.tags as |tag|}}
+      {{#each document.tags as |tag|}}
         {{tag-label tag}}
       {{/each}}
     </p>
   </div>
 </div>
 <div class="media-right has-text-centered">
-  {{#each content.files as |file|}}
+  {{#each document.files as |file|}}
     {{#if file.public}}
       {{file-icon-link file}}
     {{else}}

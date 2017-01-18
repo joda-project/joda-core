@@ -2,16 +2,16 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   joda: Ember.inject.service(),
-  contentType: null,
+  documentType: null,
 
   actions: {
     uploadCompleted: function(data) {
-      let contentType = this.get('contentType');
-      if (contentType) {
+      let documentType = this.get('documentType');
+      if (documentType) {
         if (data.data.length === 1) {
           let file = data.data[0];
-          let content = file.relationships.content.data[0];
-          this.transitionToRoute(contentType + '.edit', content.id);
+          let document = file.relationships.documents.data[0];
+          this.transitionToRoute(documentType + '.edit', document.id);
         } else {
           this.transitionToRoute('manage.unverified');
         }

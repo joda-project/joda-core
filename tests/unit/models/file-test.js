@@ -5,7 +5,7 @@ import {
 
 moduleForModel('file', 'Unit | Model | file', {
   // Specify the other units that are required for this test.
-  needs: ['model:content']
+  needs: ['model:document']
 });
 
 test('it exists', function(assert) {

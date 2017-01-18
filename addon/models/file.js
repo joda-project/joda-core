@@ -21,10 +21,10 @@ export default DS.Model.extend({
   md5: DS.attr('string'),
   size: DS.attr('number'),
   fileType: DS.attr('string'),
-  added: DS.attr('date'),
+  created_at: DS.attr('date'),
   label: DS.attr('string'),
-  contents: DS.hasMany('content'),
-  contentCount: Ember.computed.alias('contents.length'),
+  documents: DS.hasMany('document'),
+  documentCount: Ember.computed.alias('documents.length'),
 
   sizeReadable: Ember.computed('size', function() {
     return filesize(this.get('size'));

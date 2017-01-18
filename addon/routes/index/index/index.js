@@ -17,6 +17,6 @@ export default Ember.Route.extend(SessionLoginStayMixin, {
       properties['tags'] = params.tags;
     }
 
-    return this.get('store').query('content', properties);
+    return this.get('store').query('document', properties);
   }
 });

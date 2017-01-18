@@ -38,7 +38,7 @@ export default function routerHelper(self) {
   });
 
   self.route('view', {
-    path: 'view/:content_id'
+    path: 'view/:document_id'
   });
 
   let features = Joda.features;
@@ -52,10 +52,10 @@ export default function routerHelper(self) {
         this.route('loading');
       });
       this.route('view', {
-        path: ':content_id'
+        path: ':document_id'
       });
       this.route('edit', {
-        path: ':content_id/edit'
+        path: ':document_id/edit'
       });
     });
   }

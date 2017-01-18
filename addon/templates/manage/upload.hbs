@@ -5,18 +5,18 @@
 
     <label class="label">Create documents after upload</label>
     <p class="control">
-      {{#radio-button value=null groupValue=contentType class="radio" }}
+      {{#radio-button value=null groupValue=documentType class="radio" }}
         Do not create
       {{/radio-button}}
       {{#each joda.features as |feature|}}
-        {{#radio-button value=feature.id groupValue=contentType class="radio" }}
+        {{#radio-button value=feature.id groupValue=documentType class="radio" }}
           {{feature.title}}
         {{/radio-button}}
       {{/each}}
     </p>
 
     <label class="label">Files</label>
-    <p class="control">{{file-upload action="uploadCompleted" errorMessage=errorMessage progress=progress contentType=contentType }}</p>
+    <p class="control">{{file-upload action="uploadCompleted" errorMessage=errorMessage progress=progress documentType=documentType }}</p>
     <p>&nbsp;</p>
 
     {{#if errorMessage}}

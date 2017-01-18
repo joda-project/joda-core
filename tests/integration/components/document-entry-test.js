@@ -4,7 +4,7 @@ import {
 } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
-moduleForComponent('content-entry', 'Integration | Component | content entry', {
+moduleForComponent('document-entry', 'Integration | Component | document entry', {
   integration: true
 });
 
@@ -13,7 +13,7 @@ test('it renders', function(assert) {
   // Set any properties with this.set('myProperty', 'value');
   // Handle any actions with this.on('myAction', function(val) { ... });
 
-  this.render(hbs `{{content-entry}}`);
+  this.render(hbs `{{document-entry}}`);
 
   assert.equal(this.$().text().trim(), '');
 });

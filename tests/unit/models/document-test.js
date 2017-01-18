@@ -3,7 +3,7 @@ import {
   test
 } from 'ember-qunit';
 
-moduleForModel('content', 'Unit | Model | content', {
+moduleForModel('document', 'Unit | Model | document', {
   // Specify the other units that are required for this test.
   needs: ['model:file', 'model:tag']
 });

@@ -1,1 +1,0 @@
-export { default } from 'joda-core/components/content-entry';

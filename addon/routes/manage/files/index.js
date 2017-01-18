@@ -5,7 +5,7 @@ export default Ember.Route.extend({
     Ember.$.extend(params, this.paramsFor('manage.files'));
 
     var properties = {
-      'include': 'contents'
+      'include': 'documents'
     };
     if (params.search) {
       properties['search'] = params.search;

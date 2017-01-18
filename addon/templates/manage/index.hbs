@@ -10,13 +10,13 @@
 <section class="section">
   <div class="container">
     <h3>Latest unverified documents</h3>
-    {{#each model.content as |content|}}
-      {{content-entry content}}
+    {{#each model.documents as |document|}}
+      {{document-entry document}}
     {{else}}
       <i>No documents need verification.</i>
     {{/each}}
 
-    {{#if (compare model.content.meta.pagination.count '>' 5)}}
+    {{#if (compare model.documents.meta.pagination.count '>' 5)}}
       <p>
         {{#link-to 'manage.unverified' class="button is-link" }}
           All unverified documents

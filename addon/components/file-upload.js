@@ -46,7 +46,7 @@ export default EmberUploader.FileField.extend({
 
     let types = [];
     let totalSize = 0;
-    let contentType = this.get('contentType');
+    let documentType = this.get('documentType');
 
     let valid = true;
     try {
@@ -86,7 +86,7 @@ export default EmberUploader.FileField.extend({
       });
       uploader.upload(files, {
         file_types: types,
-        content_type: contentType
+        document_type: documentType
       }).then((data) => {
         this.sendAction('action', data);
       }).catch(() => {
