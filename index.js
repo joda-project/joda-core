@@ -52,7 +52,7 @@ module.exports = {
   included: function(app) {
     this._super.included.apply(this, arguments);
 
-    app.import(app.bowerDirectory + '/filesize/lib/filesize.es6.js', {
+    app.import(app.bowerDirectory + '/filesize/lib/filesize.min.js', {
       using: [{
         transformation: 'amd',
         as: 'filesize'
