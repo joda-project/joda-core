@@ -1,8 +1,9 @@
-# joda-core [![Build Status][travis-img]][travis]
+# joda-core
 [![Homepage][web-img]][web]
 [![npm][npm-img]][npm]
 [![License][license-img]][license]
 [![codecov.io][codecov-img]][codecov]
+[![Build Status][travis-img]][travis]
 
 This is an Ember.js powered frontend for Joda - a simple reference management
 web application. For installation detail see [homepage](https://joda.tano.si)
@@ -13,13 +14,10 @@ or [main repository](https://github.com/joda-project/joda).
 
 You will need the following things properly installed on your computer.
 
-* [Git](https://git-scm.com/)
-* [Node.js](https://nodejs.org/)
-* [Bower](https://bower.io/)
-* [Ember CLI](https://www.ember-cli.com/)
-
-[Django backend](https://github.com/joda-project/joda-backend)
-is currently required for development.
+* [Git](https://git-scm.com)
+* [Node.js](https://nodejs.org)
+* [Bower](https://bower.io)
+* [Ember CLI](https://ember-cli.com)
 
 
 ## Installation
@@ -28,7 +26,6 @@ is currently required for development.
 * `cd joda-core`
 * `npm install`
 * `bower install`
-* copy `sample.env` to `.env` and adapt to your local environment
 
 
 ## Running Tests
