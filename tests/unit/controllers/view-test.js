@@ -5,7 +5,7 @@ import {
 
 moduleFor('controller:view', 'Unit | Controller | view', {
   // Specify the other units that are required for this test.
-  // needs: ['controller:foo']
+  needs: ['service:joda', 'service:session']
 });
 
 // Replace this with your real tests.

@@ -5,7 +5,7 @@ import {
 
 moduleFor('route:index', 'Unit | Route | index', {
   // Specify the other units that are required for this test.
-  // needs: ['controller:foo']
+  needs: ['service:joda', 'service:session']
 });
 
 test('it exists', function(assert) {
