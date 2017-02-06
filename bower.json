@@ -1,7 +1,6 @@
 {
   "name": "joda-core",
   "dependencies": {
-    "ImageViewer": "^1.1.3",
     "filesize": "^3.5.4"
   }
 }

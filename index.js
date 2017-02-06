@@ -42,12 +42,8 @@ module.exports = {
   },
   afterInstall: function() {
     return this.addBowerPackagesToProject([{
-        name: 'filesize'
-      },
-      {
-        name: 'ImageViewer'
-      }
-    ]);
+      name: 'filesize'
+    }]);
   },
   included: function(app) {
     this._super.included.apply(this, arguments);
@@ -59,7 +55,7 @@ module.exports = {
       }]
     });
 
-    app.import(app.bowerDirectory + '/ImageViewer/imageviewer.css');
-    app.import(app.bowerDirectory + '/ImageViewer/imageviewer.min.js');
+    app.import('vendor/ImageViewer/imageviewer.css');
+    app.import('vendor/ImageViewer/imageviewer.min.js');
   }
 };
