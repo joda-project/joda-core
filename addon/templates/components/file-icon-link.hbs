@@ -1,9 +1,9 @@
 <span class="icon is-medium">
   {{#link-to "view" file activeClass="" target="_blank" }}
     {{#if file.isImage}}
-      <i class="fa fa-file-image-o"></i>
+      {{fa-icon "file-image-o"}}
     {{else}}
-      <i class="fa fa-file-pdf-o"></i>
+      {{fa-icon "file-pdf-o"}}
     {{/if}}
   {{/link-to}}
 </span>

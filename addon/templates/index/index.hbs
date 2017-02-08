@@ -8,7 +8,7 @@
             {{#multiple-select options=model.tags selected=tagsList placeholder="Tags" searchField="name" onchange=(action (mut tagsList)) as |tag| }}
               {{tag.name}}
             {{/multiple-select}}
-            <span class="icon"><i class="fa fa-tag"></i></span>
+            <span class="icon">{{fa-icon "tag"}}</span>
           </p>
         </div>
       {{/filter-sidebar}}
