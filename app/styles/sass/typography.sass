@@ -8,6 +8,10 @@ body
 .is-primary
   color: $primary
 
+.title:not(:last-child),
+.subtitle:not(:last-child)
+  margin-bottom: 0.7rem
+
 @each $size in $sizes
   $i: index($sizes, $size)
   $ip: $i + 1
