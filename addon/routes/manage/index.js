@@ -7,7 +7,7 @@ export default Ember.Route.extend({
     return Ember.RSVP.hash({
       documents: this.get('store').query('document', {
         'include': 'files',
-        'validated': false,
+        'verified': false,
         'page_size': 5
       }),
       files: this.get('store').query('file', {

@@ -4,8 +4,9 @@ export default DS.Model.extend({
   title: DS.attr('string'),
   documentType: DS.attr('string'),
   files: DS.hasMany('file'),
-  created_at: DS.attr('date'),
-  validated: DS.attr('boolean'),
+  createdAt: DS.attr('date'),
+  verified: DS.attr('boolean'),
   public: DS.attr('boolean'),
-  tags: DS.hasMany('tag')
+  tags: DS.hasMany('tag'),
+  notes: DS.attr('string')
 });
