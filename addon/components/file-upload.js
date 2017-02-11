@@ -50,7 +50,8 @@ export default EmberUploader.FileField.extend({
 
     let valid = true;
     try {
-      for (let file of files) {
+      for (let i = 0; i < files.length; i++) {
+        let file = files[i];
         if (this.get('supportedTypes').indexOf(file.type) !== -1) {
           types.push(typeMap(file.type));
         } else {
