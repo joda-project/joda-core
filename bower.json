@@ -1,6 +1,0 @@
-{
-  "name": "joda-core",
-  "dependencies": {
-    "filesize": "^3.5.4"
-  }
-}

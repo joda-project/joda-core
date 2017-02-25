@@ -2,13 +2,10 @@
 language: node_js
 node_js:
   - "6"
+  - "7"
 
 sudo: false
-
-cache:
-  directories:
-    - $HOME/.npm
-    - $HOME/.cache # includes bowers cache
+cache: yarn
 
 env:
   - EMBER_TRY_SCENARIO=ember-release COVERAGE=true
@@ -20,15 +17,9 @@ matrix:
   allow_failures:
     - env: EMBER_TRY_SCENARIO=ember-canary
 
-before_install:
-  - npm config set spin false
-  - npm install -g bower codecov phantomjs-prebuilt
-  - bower --version
+before_script:
+  - yarn global add codecov phantomjs-prebuilt
   - phantomjs --version
-
-install:
-  - npm install
-  - bower install
 
 script:
   # Usually, it's ok to finish the test scenario without reverting

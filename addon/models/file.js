@@ -1,6 +1,6 @@
 import Ember from 'ember';
 import DS from 'ember-data';
-import filesize from 'filesize';
+import filesize from "npm:filesize";
 
 export const types = [{
     name: 'PDF',

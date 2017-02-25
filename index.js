@@ -40,20 +40,8 @@ module.exports = {
   isDevelopingAddon: function() {
     return true;
   },
-  afterInstall: function() {
-    return this.addBowerPackagesToProject([{
-      name: 'filesize'
-    }]);
-  },
   included: function(app) {
     this._super.included.apply(this, arguments);
-
-    app.import(app.bowerDirectory + '/filesize/lib/filesize.min.js', {
-      using: [{
-        transformation: 'amd',
-        as: 'filesize'
-      }]
-    });
 
     app.import('vendor/ImageViewer/imageviewer.css');
     app.import('vendor/ImageViewer/imageviewer.min.js');
