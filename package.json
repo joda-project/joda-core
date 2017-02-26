@@ -11,7 +11,7 @@
     "doc": "doc",
     "test": "tests"
   },
-  "repository": "https://github.com/joda-project/joda-core",
+  "repository": "joda-project/joda-core",
   "scripts": {
     "build": "ember build",
     "start": "ember server",

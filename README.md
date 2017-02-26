@@ -5,37 +5,16 @@
 [![codecov.io][codecov-img]][codecov]
 [![Build Status][travis-img]][travis]
 
-This is an Ember.js powered frontend for Joda - a simple reference management
-web application. For installation detail see [homepage](https://joda.tano.si)
+This is an Ember.js powered frontend core for Joda - a simple reference management
+web application. For details see the [homepage](https://joda.tano.si)
 or [main repository](https://github.com/joda-project/joda).
 
-
-## Prerequisites
-
-You will need the following things properly installed on your computer.
-
-* [Git](https://git-scm.com)
-* [Node.js](https://nodejs.org)
-* [Bower](https://bower.io)
-* [Ember CLI](https://ember-cli.com)
-
-
-## Installation
-
-* `git clone https://github.com/joda-project/joda-core` this repository
-* `cd joda-core`
-* `npm install`
-* `bower install`
-
-
-## Running Tests
-
-* `npm test` (Runs `ember try:each` to test your addon against multiple Ember versions)
-* `ember test`
-* `ember test --server`
-
-For more information on using ember-cli, visit [https://ember-cli.com/](https://ember-cli.com/).
-
+## Contributing
+There are several guidelines on contributing to Joda:
+ * [Submitting issues](https://github.com/joda-project/joda/blob/master/CONTRIBUTING.md#submitting-issues)
+ * [Proposing a new feature](https://github.com/joda-project/joda/blob/master/CONTRIBUTING.md#feature-requests)
+ * [Submiting a pull-request](CONTRIBUTING.md#pull-requests)
+ * [Building instructions](BUILDING.md)
 
 ## Copyright info
 Copyright (C) 2016-2017 Tadej Novak
