@@ -7,7 +7,7 @@
 .editorconfig
 .ember-cli
 .gitignore
-.jshintrc
+.eslintrc.js
 .npmignore
 .travis.yml
 .watchmanconfig
