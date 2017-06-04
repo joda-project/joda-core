@@ -1,6 +1,9 @@
 import Ember from 'ember';
 import ApplicationMainMixin from 'joda-core/mixins/application-main';
-import { module, test } from 'qunit';
+import {
+  module,
+  test
+} from 'qunit';
 
 module('Unit | Mixin | application main');
 
