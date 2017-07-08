@@ -16,6 +16,10 @@ export default Ember.Component.extend({
   actions: {
     invalidateSession() {
       this.get('session').invalidate();
+    },
+
+    toggleHamburger() {
+      this.$('.navbar-burger,.navbar-menu').toggleClass('is-active');
     }
   }
 });

@@ -1,33 +1,39 @@
 <div class="hero-head">
-  <header class="nav">
-    <div class="container">
-      <div class="nav-left">
-        {{#link-to 'index' class="nav-item nav-title is-active" activeClass="" }}
+  <div class="container">
+    <nav class="navbar">
+      <div class="navbar-brand">
+        {{#link-to 'index' class="navbar-item navbar-title" activeClass="" }}
           <span class="logo"></span> {{joda.appName}}
         {{/link-to}}
+
+        <div class="navbar-burger burger" data-target="navmenu-main" {{action 'toggleHamburger'}}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
       </div>
-      <span class="nav-toggle">
-          <span></span><span></span><span></span>
-      </span>
-      <div class="nav-right nav-menu">
-        {{#each joda.links as |link|}}
-          {{#link-to link.id class="nav-item" activeClass="is-active" }}
-            {{link.title}}
+
+      <div id="navmenu-main" class="navbar-menu">
+        <div class="navbar-end">
+          {{#each joda.links as |link|}}
+            {{#link-to link.id class="navbar-item" activeClass="is-active" }}
+              {{link.title}}
+            {{/link-to}}
+          {{/each}}
+
+          {{#link-to 'manage' class="navbar-item" activeClass="is-active" }}
+            Manage
           {{/link-to}}
-        {{/each}}
 
-        {{#link-to 'manage' class="nav-item" activeClass="is-active" }}
-          Manage
-        {{/link-to}}
-
-        {{#if session.isAuthenticated}}
-          <a class="nav-item" {{action 'invalidateSession'}}>Logout {{currentUser.user.username}}</a>
-        {{else}}
-          {{#link-to 'login' class="nav-item" activeClass="is-active" }}Login{{/link-to}}
-        {{/if}}
+          {{#if session.isAuthenticated}}
+            <a class="navbar-item" {{action 'invalidateSession'}}>Logout {{currentUser.user.username}}</a>
+          {{else}}
+            {{#link-to 'login' class="navbar-item" activeClass="is-active" }}Login{{/link-to}}
+          {{/if}}
+        </div>
       </div>
-    </div>
-  </header>
+    </nav>
+  </div>
 </div>
 
 {{#if title}}
