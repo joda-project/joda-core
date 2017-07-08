@@ -1,14 +1,7 @@
 import Ember from 'ember';
+import FiltersSearchControllerMixin from 'joda-core/mixins/filters-search-controller';
 
-export default Ember.Controller.extend({
-  search: null,
-
-  searchObserver: Ember.observer('search', function() {
-    if (this.get('search') === "") {
-      this.set('search', null);
-    }
-  }),
-
+export default Ember.Controller.extend(FiltersSearchControllerMixin, {
   actions: {
     resetFilters: function() {
       this.set('search', null);

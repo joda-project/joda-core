@@ -1,19 +1,12 @@
 import Ember from 'ember';
+import FiltersSearchControllerMixin from 'joda-core/mixins/filters-search-controller';
 import { types } from 'joda-core/models/file';
 
-export default Ember.Controller.extend({
+export default Ember.Controller.extend(FiltersSearchControllerMixin, {
   types: types,
 
-  search: null,
   file_type: null,
-
   fileTypeItem: null,
-
-  searchObserver: Ember.observer('search', function() {
-    if (this.get('search') === "") {
-      this.set('search', null);
-    }
-  }),
 
   fileTypeObserver: Ember.observer('file_type', function() {
     let file_type = this.get('file_type');
