@@ -1,0 +1,25 @@
+<section class="section">
+  <div class="container">
+    <div class="media is-vertical-centered">
+    {{#if model.hasAvatar}}
+      <div class="media-left">
+        <figure class="image is-96x96 is-rounded">
+          <img src="{{model.gravatarLarge}}" alt="{{model.username}}">
+        </figure>
+      </div>
+    {{/if}}
+
+     <div class="media-content">
+       <p class="title is-3">
+         {{model.displayName}}
+         {{#if model.isStaff}}
+           <span class="tag">Staff</span>
+         {{/if}}
+       </p>
+       <p class="subtitle is-5">
+         @{{model.username}}
+       </p>
+     </div>
+   </div>
+  </div>
+</section>

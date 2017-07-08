@@ -26,9 +26,26 @@
           {{/link-to}}
 
           {{#if session.isAuthenticated}}
-            <a class="navbar-item" {{action 'invalidateSession'}}>Logout {{currentUser.user.username}}</a>
+            <div class="navbar-item navbar-user has-dropdown is-hoverable">
+              {{#link-to 'account' class="navbar-item" activeClass="" }}
+              {{#if currentUser.user.hasAvatar}}
+                <span class="icon icon-avatar is-hidden-touch" style="{{currentUser.user.gravatarSmallBkg}}"></span>
+              {{/if}}
+                {{currentUser.user.displayName}}
+              {{/link-to}}
+
+              <div class="navbar-dropdown is-boxed">
+                {{#link-to 'account.index' class="navbar-item" activeClass="is-active" }}
+                  User information
+                {{/link-to}}
+                {{#link-to 'account.edit' class="navbar-item" activeClass="is-active" }}
+                  Edit settings
+                {{/link-to}}
+                <a class="navbar-item" {{action 'invalidateSession'}}>Logout</a>
+              </div>
+            </div>
           {{else}}
-            {{#link-to 'login' class="navbar-item" activeClass="is-active" }}Login{{/link-to}}
+            {{#link-to 'login' class="navbar-item navbar-user" activeClass="is-active" }}Login{{/link-to}}
           {{/if}}
         </div>
       </div>

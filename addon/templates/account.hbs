@@ -1,0 +1,17 @@
+{{#common-header title="My Account" }}
+  {{#link-to 'account.index' tagName="li" activeClass="is-active" }}
+    {{#link-to 'account.index'}}
+      Information
+    {{/link-to}}
+  {{/link-to}}
+
+  {{#link-to 'account.edit' tagName="li" activeClass="is-active" }}
+    {{#link-to 'account.edit' }}
+      Settings
+    {{/link-to}}
+  {{/link-to}}
+{{/common-header}}
+
+{{outlet}}
+
+{{common-footer}}

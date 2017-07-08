@@ -23,6 +23,10 @@ export default function routerHelper(self) {
   self.route('login');
   self.route('about');
 
+  self.route('account', function() {
+    this.route('edit');
+  });
+
   self.route('manage', function() {
     this.route('files', function() {
       this.route('index', {
