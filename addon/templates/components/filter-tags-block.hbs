@@ -1,5 +1,5 @@
 <p class="control has-icons-left">
-  {{#multiple-select options=model selected=selected placeholder="Tags" searchField="name" onchange=(action (mut selected)) as |tag| }}
+  {{#multiple-select options=model selected=selected placeholder=(t 'common.tags') searchField="name" onchange=(action (mut selected)) as |tag| }}
     {{tag.name}}
   {{/multiple-select}}
   <span class="icon is-left">{{fa-icon "tag"}}</span>

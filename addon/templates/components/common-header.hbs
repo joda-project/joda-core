@@ -22,7 +22,7 @@
           {{/each}}
 
           {{#link-to 'manage' class="navbar-item" activeClass="is-active" }}
-            Manage
+            {{t 'common.manage'}}
           {{/link-to}}
 
           {{#if session.isAuthenticated}}
@@ -36,16 +36,20 @@
 
               <div class="navbar-dropdown is-boxed">
                 {{#link-to 'account.index' class="navbar-item" activeClass="is-active" }}
-                  User information
+                  {{t 'account.information-user'}}
                 {{/link-to}}
                 {{#link-to 'account.edit' class="navbar-item" activeClass="is-active" }}
-                  Edit settings
+                  {{t 'account.settings-edit'}}
                 {{/link-to}}
-                <a class="navbar-item" {{action 'invalidateSession'}}>Logout</a>
+                <a class="navbar-item" {{action 'invalidateSession'}}>
+                  {{t 'account.logout'}}
+                </a>
               </div>
             </div>
           {{else}}
-            {{#link-to 'login' class="navbar-item navbar-user" activeClass="is-active" }}Login{{/link-to}}
+            {{#link-to 'login' class="navbar-item navbar-user" activeClass="is-active" }}
+              {{t 'account.login'}}
+            {{/link-to}}
           {{/if}}
         </div>
       </div>

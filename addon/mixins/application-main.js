@@ -1,11 +1,16 @@
 import Ember from 'ember';
+import config from 'ember-get-config';
+
+const {
+  Joda
+} = config;
 
 export default Ember.Mixin.create({
   currentUser: Ember.inject.service(),
   joda: Ember.inject.service(),
 
   title: function(tokens) {
-    const base = 'Joda';
+    const base = Joda.appName;
 
     return tokens && tokens.length ? tokens.reverse().join(' - ') + ' - ' + base : base;
   },

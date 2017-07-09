@@ -1,12 +1,12 @@
 {{#hero-fullpage errorPage=true}}
-  <h1>404</h1>
-  <h2>Oops, you've encountered an error</h2>
+  <h1>{{t 'common.error.404'}}</h1>
+  <h2>{{t 'common.error.404-oops'}}</h2>
 
-  <p>It appears the page you were looking for doesn’t exist. Sorry about that.</p>
+  <p>{{t 'common.error.404-body'}}</p>
 
   <p>
     {{#link-to 'index' class="button is-primary is-hero is-large" }}
-      Home
+      {{t 'common.home'}}
     {{/link-to}}
   </p>
 {{/hero-fullpage}}

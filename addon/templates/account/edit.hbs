@@ -1,25 +1,25 @@
 <section class="section">
   <div class="container">
-    <h3>Edit account settings</h3>
+    <h3>{{t 'account.settings-edit'}}</h3>
     <form id="account-edit" {{action "save" on="submit"}}>
       <div class="block">
-        <h4>Basic info</h4>
-        <label class="label">First name</label>
+        <h4>{{t 'account.basic-info'}}</h4>
+        <label class="label">{{t 'account.first-name'}}</label>
         <p class="control">
           {{input class="input" type="text" value=model.firstName}}
         </p>
-        <label class="label">Last name</label>
+        <label class="label">{{t 'account.last-name'}}</label>
         <p class="control">
           {{input class="input" type="text" value=model.lastName}}
         </p>
       </div>
 
       <div class="block">
-        <h4>Avatar</h4>
+        <h4>{{t 'account.avatar'}}</h4>
         <p class="control">
           <label class="checkbox">
             {{input type="checkbox" checked=model.remoteAvatar}}
-            Enable Gravatar avatar support
+            {{t 'account.gravatar-enable'}}
           </label>
         </p>
       </div>
@@ -29,13 +29,13 @@
           <span class="icon is-small">
             {{fa-icon "check"}}
           </span>
-          <span>Save</span>
+          <span>{{t 'common.save'}}</span>
         </button>
         <a class="button is-link" {{action "cancel"}}>
           <span class="icon is-small">
             {{fa-icon "times"}}
           </span>
-          <span>Cancel</span>
+          <span>{{t 'common.cancel'}}</span>
         </a>
       </p>
     </form>

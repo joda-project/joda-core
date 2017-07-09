@@ -1,25 +1,25 @@
 <section class="section">
   <div class="container">
-    <h3>Add documents</h3>
+    <h3>{{t 'documents.add'}}</h3>
     {{#link-to 'manage.upload' class="button is-primary is-medium" }}
-      Upload
+      {{t 'files.upload'}}
     {{/link-to}}
   </div>
 </section>
 
 <section class="section">
   <div class="container">
-    <h3>Latest unverified documents</h3>
+    <h3>{{t 'documents.unverified-latest'}}</h3>
     {{#each model.documents as |document|}}
       {{document-entry document}}
     {{else}}
-      <i>No documents need verification.</i>
+      <i>{{t 'documents.unverified-none'}}</i>
     {{/each}}
 
     {{#if (compare model.documents.meta.pagination.count '>' 5)}}
       <p>
         {{#link-to 'manage.unverified' class="button is-link" }}
-          All unverified documents
+          {{t 'documents.unverified-all'}}
         {{/link-to}}
       </p>
     {{/if}}
@@ -28,17 +28,17 @@
 
 <section class="section">
   <div class="container">
-    <h3>Latest files with no documents</h3>
+    <h3>{{t 'files.without-latest'}}</h3>
     {{#each model.files as |file|}}
       {{file-entry file}}
     {{else}}
-      <i>All files have at least one document assigned.</i>
+      <i>{{t 'files.without-none'}}</i>
     {{/each}}
 
     {{#if (compare model.files.meta.pagination.count '>' 5)}}
       <p>
         {{#link-to 'manage.files' class="button is-link" }}
-          All files with no documents
+          {{t 'files.without-all'}}
         {{/link-to}}
       </p>
     {{/if}}

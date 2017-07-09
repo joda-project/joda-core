@@ -1,4 +1,4 @@
-{{#section-content-list title="All documents"}}
+{{#section-content-list title=(t "documents.all")}}
   {{#filter-sidebar search=search sortTypes=sortTypes sortSelected=sortSelected reset=(action "resetFilters")}}
     {{filter-tags-block model=model.tags selected=tagsList}}
   {{/filter-sidebar}}

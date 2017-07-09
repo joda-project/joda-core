@@ -1,13 +1,13 @@
-{{#common-header title="My Account" }}
+{{#common-header title=(t 'account.my') }}
   {{#link-to 'account.index' tagName="li" activeClass="is-active" }}
     {{#link-to 'account.index'}}
-      Information
+      {{t 'account.information'}}
     {{/link-to}}
   {{/link-to}}
 
   {{#link-to 'account.edit' tagName="li" activeClass="is-active" }}
     {{#link-to 'account.edit' }}
-      Settings
+      {{t 'account.settings'}}
     {{/link-to}}
   {{/link-to}}
 {{/common-header}}

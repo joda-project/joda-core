@@ -1,8 +1,8 @@
-{{#section-content-list title="Files"}}
+{{#section-content-list title=(t 'files.files')}}
   {{#filter-sidebar search=search sortTypes=sortTypes sortSelected=sortSelected reset=(action "resetFilters")}}
     <div class="panel-block">
       <p class="control has-icons-left">
-        {{#single-select options=types selected=fileTypeItem placeholder="File type" searchEnabled=false onchange=(action (mut fileTypeItem)) as |type| }}
+        {{#single-select options=types selected=fileTypeItem placeholder=(t 'files.type') searchEnabled=false onchange=(action (mut fileTypeItem)) as |type| }}
           {{type.name}}
         {{/single-select}}
         <span class="icon is-left">{{fa-icon "file-o"}}</span>

@@ -6,19 +6,19 @@ export default Ember.Mixin.create({
   sortTypes: [
     {
       id: 'title',
-      name: 'Title - Ascending'
+      name: 'common.sort-title-ascending'
     },
     {
       id: '-title',
-      name: 'Title - Descending'
+      name: 'common.sort-title-descending'
     },
     {
       id: 'created_at',
-      name: 'Upload Time - Ascending'
+      name: 'common.sort-uploaded-ascending'
     },
     {
       id: '-created_at',
-      name: 'Upload Time - Descending'
+      name: 'common.sort-uploaded-descending'
     }
   ],
 

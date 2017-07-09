@@ -2939,6 +2939,15 @@ ember-getowner-polyfill@^1.1.0, ember-getowner-polyfill@^1.2.2:
     ember-cli-version-checker "^1.2.0"
     ember-factory-for-polyfill "^1.1.0"
 
+ember-i18n@^5.0.2:
+  version "5.0.2"
+  resolved "https://registry.yarnpkg.com/ember-i18n/-/ember-i18n-5.0.2.tgz#3de05014e632b53a1b48d84d4a0d2ff261b8ebfc"
+  dependencies:
+    broccoli-funnel "^1.0.6"
+    ember-cli-babel "^5.1.7"
+    ember-cli-version-checker "^1.2.0"
+    ember-getowner-polyfill "^1.2.2"
+
 ember-inflector@^2.0.0:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/ember-inflector/-/ember-inflector-2.0.1.tgz#e9ac469ffa17992a43276bb1c9b8d87992b10d37"
@@ -4477,6 +4486,13 @@ istextorbinary@2.1.0:
     binaryextensions "1 || 2"
     editions "^1.1.1"
     textextensions "1 || 2"
+
+joda-i18n@~0.1.0-alpha.0:
+  version "0.1.0-alpha.0"
+  resolved "https://registry.yarnpkg.com/joda-i18n/-/joda-i18n-0.1.0-alpha.0.tgz#38a323aac197dd40cb2a84b3f164d28dd1be04f8"
+  dependencies:
+    ember-cli-babel "^6.3.0"
+    ember-i18n "^5.0.2"
 
 jquery@^3.2.1:
   version "3.2.1"

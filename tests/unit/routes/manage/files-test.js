@@ -5,7 +5,7 @@ import {
 
 moduleFor('route:manage/files', 'Unit | Route | manage/files', {
   // Specify the other units that are required for this test.
-  // needs: ['controller:foo']
+  needs: ['service:i18n']
 });
 
 test('it exists', function(assert) {

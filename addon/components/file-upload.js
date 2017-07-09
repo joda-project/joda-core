@@ -1,6 +1,7 @@
 import Ember from 'ember';
 import EmberUploader from 'ember-uploader';
 import config from 'ember-get-config';
+import { translationMacro as t } from "ember-i18n";
 
 const {
   Joda
@@ -8,12 +9,12 @@ const {
 
 function SizeException() {
   this.name = 'SizeException';
-  this.message = 'You can only upload files smaller than 300 MiB.';
+  this.message = 'files.exceptions.size';
 }
 
-function TypeException(type) {
+function TypeException() {
   this.name = 'TypeException';
-  this.message = `You can only upload PDF, JPEG and PNG files. Type ${type} is not allowed.`;
+  this.message = 'files.exceptions.type';
 }
 
 function typeMap(type) {
@@ -31,6 +32,7 @@ function typeMap(type) {
 
 export default EmberUploader.FileField.extend({
   session: Ember.inject.service(),
+  i18n: Ember.inject.service(),
   url: (Joda.backendUri ? Joda.backendUri : '') + '/api/files',
   multiple: true,
 
@@ -55,7 +57,7 @@ export default EmberUploader.FileField.extend({
         if (this.get('supportedTypes').indexOf(file.type) !== -1) {
           types.push(typeMap(file.type));
         } else {
-          throw new TypeException(file.type);
+          throw new TypeException();
         }
 
         totalSize += file.size;
@@ -64,7 +66,7 @@ export default EmberUploader.FileField.extend({
         }
       }
     } catch (exception) {
-      this.set('errorMessage', exception.message);
+      this.set('errorMessage', t(exception.message));
       return;
     }
 
@@ -91,7 +93,7 @@ export default EmberUploader.FileField.extend({
       }).then((data) => {
         this.sendAction('action', data);
       }).catch(() => {
-        this.set('errorMessage', 'Oops, something went wrong. Please try again.');
+        this.set('errorMessage', t('common.error.generic'));
       });
     });
 

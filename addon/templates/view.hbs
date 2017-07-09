@@ -26,7 +26,7 @@
   {{else}}
     <div class="object-wrapper">
       <object width="100%" height="100%" type="{{model.mimeType}}" data="{{fileNameInline}}">
-        <p>It appears you don't have a PDF plugin for this browser.</p>
+        <p>{{t 'common.error.pdf-plugin'}}</p>
       </object>
     </div>
   {{/if}}

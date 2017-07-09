@@ -9,11 +9,11 @@ export default Ember.Controller.extend(FiltersSearchControllerMixin, FiltersSort
   sortTypes: [
     {
       id: 'created_at',
-      name: 'Upload Time - Ascending'
+      name: 'common.sort-uploaded-ascending'
     },
     {
       id: '-created_at',
-      name: 'Upload Time - Descending'
+      name: 'common.sort-uploaded-descending'
     }
   ],
 

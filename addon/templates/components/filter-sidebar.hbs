@@ -1,10 +1,10 @@
 <nav class="panel">
   <p class="panel-heading">
-    Filter &amp; Sort
+    {{t 'common.filter-sort'}}
   </p>
   <div class="panel-block">
     <p class="control has-icons-left">
-      {{input class="input" type="text" placeholder="Search" value=search}}
+      {{input class="input" type="text" placeholder=(t 'common.search') value=search}}
       <span class="icon is-left">{{fa-icon "search"}}</span>
     </p>
   </div>
@@ -13,8 +13,8 @@
 
   <div class="panel-block">
     <p class="control has-icons-left">
-      {{#single-select options=sortTypes selected=sortSelected placeholder="Sort" searchField="name" onchange=(action (mut sortSelected)) as |sort| }}
-        {{sort.name}}
+      {{#single-select options=sortTypes selected=sortSelected placeholder=(t 'common.sort') searchField="name" onchange=(action (mut sortSelected)) as |sort| }}
+        {{t sort.name}}
       {{/single-select}}
       <span class="icon is-left">{{fa-icon "sort"}}</span>
     </p>
@@ -22,7 +22,7 @@
 
   <div class="panel-block">
     <button class="button is-primary is-outlined is-fullwidth is-small" {{action "reset"}}>
-      Reset all
+      {{t 'common.filter-reset'}}
     </button>
   </div>
 </nav>

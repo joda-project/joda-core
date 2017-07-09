@@ -1,8 +1,10 @@
 import Ember from 'ember';
+import { translationMacro as t } from "ember-i18n";
 
 export default Ember.Route.extend({
-  titleToken: 'Settings',
+  titleToken: t('account.settings'),
   currentUser: Ember.inject.service(),
+  i18n: Ember.inject.service(),
 
   model () {
     return this.get('currentUser.user');

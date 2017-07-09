@@ -5,7 +5,7 @@ import {
 
 moduleFor('route:account/edit', 'Unit | Route | account/edit', {
   // Specify the other units that are required for this test.
-  needs: ['service:currentUser']
+  needs: ['service:currentUser', 'service:i18n']
 });
 
 test('it exists', function(assert) {

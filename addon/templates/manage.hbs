@@ -1,25 +1,25 @@
-{{#common-header title="Manage" }}
+{{#common-header title=(t 'common.manage') }}
   {{#link-to 'manage.index' tagName="li" activeClass="is-active" }}
     {{#link-to 'manage.index'}}
-      Summary
+      {{t 'common.manage'}}
     {{/link-to}}
   {{/link-to}}
 
   {{#link-to 'manage.unverified' tagName="li" activeClass="is-active" }}
     {{#link-to 'manage.unverified' }}
-      Unverified
+      {{t 'documents.unverified'}}
     {{/link-to}}
   {{/link-to}}
 
   {{#link-to 'manage.files' tagName="li" activeClass="is-active" }}
     {{#link-to 'manage.files' }}
-      Files
+      {{t 'files.files'}}
     {{/link-to}}
   {{/link-to}}
 
   {{#link-to 'manage.upload' tagName="li" activeClass="is-active" }}
     {{#link-to 'manage.upload' }}
-      Upload
+      {{t 'files.upload'}}
     {{/link-to}}
   {{/link-to}}
 {{/common-header}}
