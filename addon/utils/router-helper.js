@@ -21,7 +21,6 @@ export default function routerHelper(self) {
     path: '*path'
   });
   self.route('login');
-  self.route('about');
 
   self.route('account', function() {
     this.route('edit');
