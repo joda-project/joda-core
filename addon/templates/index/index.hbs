@@ -1,21 +1,9 @@
-<section class="section">
-  <div class="container">
-    <h3>All documents</h3>
-    <div class="columns is-reversed">
-      {{#filter-sidebar search=search reset=(action "resetFilters")}}
-        <div class="panel-block">
-          <p class="control has-icons-left">
-            {{#multiple-select options=model.tags selected=tagsList placeholder="Tags" searchField="name" onchange=(action (mut tagsList)) as |tag| }}
-              {{tag.name}}
-            {{/multiple-select}}
-            <span class="icon is-left">{{fa-icon "tag"}}</span>
-          </p>
-        </div>
-      {{/filter-sidebar}}
+{{#section-content-list title="All documents"}}
+  {{#filter-sidebar search=search sortTypes=sortTypes sortSelected=sortSelected reset=(action "resetFilters")}}
+    {{filter-tags-block model=model.tags selected=tagsList}}
+  {{/filter-sidebar}}
 
-      <div class="column">
-        {{outlet}}
-      </div>
-    </div>
+  <div class="column">
+    {{outlet}}
   </div>
-</section>
+{{/section-content-list}}

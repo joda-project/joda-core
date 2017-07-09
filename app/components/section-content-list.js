@@ -1,0 +1,1 @@
+export { default } from 'joda-core/components/section-content-list';

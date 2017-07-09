@@ -1,14 +1,9 @@
-<section class="section">
-  <div class="container">
-    <h3>Unverified documents</h3>
-    <div class="columns is-reversed">
-      {{#filter-sidebar search=search reset=(action "resetFilters")}}
+{{#section-content-list title="Unverified documents"}}
+  {{#filter-sidebar search=search sortTypes=sortTypes sortSelected=sortSelected reset=(action "resetFilters")}}
 
-      {{/filter-sidebar}}
+  {{/filter-sidebar}}
 
-      <div class="column">
-        {{outlet}}
-      </div>
-    </div>
+  <div class="column">
+    {{outlet}}
   </div>
-</section>
+{{/section-content-list}}

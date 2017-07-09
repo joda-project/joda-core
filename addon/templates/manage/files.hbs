@@ -1,21 +1,16 @@
-<section class="section">
-  <div class="container">
-    <h3>Files</h3>
-    <div class="columns is-reversed">
-      {{#filter-sidebar search=search reset=(action "resetFilters")}}
-        <div class="panel-block">
-          <p class="control has-icons-left">
-            {{#single-select options=types selected=fileTypeItem placeholder="File type" searchEnabled=false onchange=(action (mut fileTypeItem)) as |type| }}
-              {{type.name}}
-            {{/single-select}}
-            <span class="icon is-left">{{fa-icon "file-o"}}</span>
-          </p>
-        </div>
-      {{/filter-sidebar}}
-
-      <div class="column">
-        {{outlet}}
-      </div>
+{{#section-content-list title="Files"}}
+  {{#filter-sidebar search=search sortTypes=sortTypes sortSelected=sortSelected reset=(action "resetFilters")}}
+    <div class="panel-block">
+      <p class="control has-icons-left">
+        {{#single-select options=types selected=fileTypeItem placeholder="File type" searchEnabled=false onchange=(action (mut fileTypeItem)) as |type| }}
+          {{type.name}}
+        {{/single-select}}
+        <span class="icon is-left">{{fa-icon "file-o"}}</span>
+      </p>
     </div>
+  {{/filter-sidebar}}
+
+  <div class="column">
+    {{outlet}}
   </div>
-</section>
+{{/section-content-list}}

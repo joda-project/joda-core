@@ -12,6 +12,10 @@ export default Ember.Route.extend({
       properties['search'] = params.search;
     }
 
+    if (params.sort) {
+      properties['sort'] = params.sort;
+    }
+
     return this.get('store').query('document', properties);
   }
 });

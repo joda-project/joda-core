@@ -15,6 +15,10 @@ export default Ember.Route.extend({
       properties['file_type'] = params.file_type;
     }
 
+    if (params.sort) {
+      properties['sort'] = params.sort;
+    }
+
     return this.get('store').query('file', properties);
   }
 });

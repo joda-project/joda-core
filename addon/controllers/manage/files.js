@@ -1,9 +1,21 @@
 import Ember from 'ember';
 import FiltersSearchControllerMixin from 'joda-core/mixins/filters-search-controller';
+import FiltersSortControllerMixin from 'joda-core/mixins/filters-sort-controller';
 import { types } from 'joda-core/models/file';
 
-export default Ember.Controller.extend(FiltersSearchControllerMixin, {
+export default Ember.Controller.extend(FiltersSearchControllerMixin, FiltersSortControllerMixin, {
   types: types,
+
+  sortTypes: [
+    {
+      id: 'created_at',
+      name: 'Upload Time - Ascending'
+    },
+    {
+      id: '-created_at',
+      name: 'Upload Time - Descending'
+    }
+  ],
 
   file_type: null,
   fileTypeItem: null,

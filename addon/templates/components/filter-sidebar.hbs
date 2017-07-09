@@ -1,6 +1,6 @@
 <nav class="panel">
   <p class="panel-heading">
-    Filter
+    Filter &amp; Sort
   </p>
   <div class="panel-block">
     <p class="control has-icons-left">
@@ -12,8 +12,17 @@
   {{yield}}
 
   <div class="panel-block">
+    <p class="control has-icons-left">
+      {{#single-select options=sortTypes selected=sortSelected placeholder="Sort" searchField="name" onchange=(action (mut sortSelected)) as |sort| }}
+        {{sort.name}}
+      {{/single-select}}
+      <span class="icon is-left">{{fa-icon "sort"}}</span>
+    </p>
+  </div>
+
+  <div class="panel-block">
     <button class="button is-primary is-outlined is-fullwidth is-small" {{action "reset"}}>
-      Reset all filters
+      Reset all
     </button>
   </div>
 </nav>
