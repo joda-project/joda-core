@@ -15,7 +15,7 @@
       <div class="level-item has-special-links">
         {{#each joda.links as |link|}}
           {{#link-to link.id activeClass="" }}
-            {{link.title}}
+            {{t link.title}}
           {{/link-to}}
         {{/each}}
         <a href="{{joda.backendUri}}/admin/">{{t 'common.admin'}}</a>
