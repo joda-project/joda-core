@@ -3,13 +3,13 @@ import {
   test
 } from 'ember-qunit';
 
-moduleFor('service:current-user', 'Unit | Service | current user', {
+moduleFor('controller:account/edit', 'Unit | Controller | account/edit', {
   // Specify the other units that are required for this test.
-  needs: ['service:session', 'service:i18n']
+  needs: ['service:i18n']
 });
 
 // Replace this with your real tests.
 test('it exists', function(assert) {
-  let service = this.subject();
-  assert.ok(service);
+  let controller = this.subject();
+  assert.ok(controller);
 });

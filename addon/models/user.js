@@ -6,6 +6,7 @@ export default DS.Model.extend({
   firstName: DS.attr('string'),
   lastName: DS.attr('string'),
   isStaff: DS.attr('boolean'),
+  locale: DS.attr('string'),
   remoteAvatar: DS.attr('boolean'),
   gravatar: DS.attr('string'),
 

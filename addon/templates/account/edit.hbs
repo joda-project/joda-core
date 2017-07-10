@@ -15,6 +15,16 @@
       </div>
 
       <div class="block">
+        <h4>{{t 'account.locale'}}</h4>
+        <p class="control has-icons-left">
+          {{#single-select options=locales selected=locale allowClear=false searchField="text" onchange=(action 'chooseLocale') as |l| }}
+            {{l.text}}
+          {{/single-select}}
+          <span class="icon is-left">{{fa-icon "language"}}</span>
+        </p>
+      </div>
+
+      <div class="block">
         <h4>{{t 'account.avatar'}}</h4>
         <p class="control">
           <label class="checkbox">
