@@ -1,7 +1,6 @@
 ---
 language: node_js
 node_js:
-  - "6"
   - "8"
   - "9"
 
@@ -18,10 +17,9 @@ env:
     # See https://git.io/vdao3 for details.
     - JOBS=1
   matrix:
-    - EMBER_TRY_SCENARIO=ember-release COVERAGE=true
+    - EMBER_TRY_SCENARIO=ember-default COVERAGE=true
     - EMBER_TRY_SCENARIO=ember-beta
     - EMBER_TRY_SCENARIO=ember-canary
-    - EMBER_TRY_SCENARIO=ember-default
 
 matrix:
   fast_finish: true
@@ -30,7 +28,7 @@ matrix:
 
 before_script:
   - yarn global add codecov
-  - yarn upgrade joda-project/joda-i18n
+  - yarn add joda-project/joda-i18n
 
 script:
   # Usually, it's ok to finish the test scenario without reverting

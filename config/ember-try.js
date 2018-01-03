@@ -1,21 +1,6 @@
 module.exports = {
+  useYarn: true,
   scenarios: [
-    {
-      name: 'ember-release',
-      bower: {
-        dependencies: {
-          'ember': 'components/ember#release'
-        },
-        resolutions: {
-          'ember': 'release'
-        }
-      },
-      npm: {
-        devDependencies: {
-          'ember-source': null
-        }
-      }
-    },
     {
       name: 'ember-beta',
       bower: {
