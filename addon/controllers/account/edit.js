@@ -1,8 +1,10 @@
-import Ember from 'ember';
+import Controller from '@ember/controller';
+import { computed } from '@ember/object';
+import { inject as service } from '@ember/service';
 
-export default Ember.Controller.extend({
-  i18n: Ember.inject.service(),
-  locale: Ember.computed('model.locale', function() {
+export default Controller.extend({
+  i18n: service(),
+  locale: computed('model.locale', function() {
     const locales = this.get('locales');
     for (let l of locales) {
       if (l.id == this.get('model.locale')) {
@@ -11,7 +13,7 @@ export default Ember.Controller.extend({
     }
   }),
 
-  locales: Ember.computed('i18n.locale', 'i18n.locales', function() {
+  locales: computed('i18n{locale,locales}', function() {
     const i18n = this.get('i18n');
     return this.get('i18n.locales').map(function(locale) {
       return {

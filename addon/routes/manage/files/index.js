@@ -1,8 +1,9 @@
-import Ember from 'ember';
+import $ from 'jquery';
+import Route from '@ember/routing/route';
 
-export default Ember.Route.extend({
+export default Route.extend({
   model: function(params) {
-    Ember.$.extend(params, this.paramsFor('manage.files'));
+    $.extend(params, this.paramsFor('manage.files'));
 
     var properties = {
       'include': 'documents'

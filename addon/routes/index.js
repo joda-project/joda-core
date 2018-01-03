@@ -1,8 +1,9 @@
-import Ember from 'ember';
+import Route from '@ember/routing/route';
+import { inject as service } from '@ember/service';
 import SessionLoginStayMixin from 'joda-core/mixins/session-login-stay';
 
-export default Ember.Route.extend(SessionLoginStayMixin, {
-  joda: Ember.inject.service(),
+export default Route.extend(SessionLoginStayMixin, {
+  joda: service(),
 
   setupController: function(controller) {
     this._super(...arguments);

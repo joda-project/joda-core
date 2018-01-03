@@ -1,6 +1,7 @@
-import Ember from 'ember';
 import DS from 'ember-data';
-import filesize from "npm:filesize";
+import { computed } from '@ember/object';
+import { alias } from '@ember/object/computed';
+import filesize from 'npm:filesize';
 
 export const types = [{
     name: 'PDF',
@@ -25,18 +26,18 @@ export default DS.Model.extend({
   public: DS.attr('boolean'),
   label: DS.attr('string'),
   documents: DS.hasMany('document'),
-  documentCount: Ember.computed.alias('documents.length'),
+  documentCount: alias('documents.length'),
 
-  sizeReadable: Ember.computed('size', function() {
+  sizeReadable: computed('size', function() {
     return filesize(this.get('size'));
   }),
 
-  isImage: Ember.computed('fileType', function() {
+  isImage: computed('fileType', function() {
     let fileType = this.get('fileType');
     return fileType === 'PNG' || fileType === 'JPEG';
   }),
 
-  mimeType: Ember.computed('fileType', function() {
+  mimeType: computed('fileType', function() {
     switch (this.get('fileType')) {
       case 'PDF':
         return 'application/pdf';

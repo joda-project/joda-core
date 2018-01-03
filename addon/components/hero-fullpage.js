@@ -1,9 +1,10 @@
-import Ember from 'ember';
+import Component from '@ember/component';
+import { inject as service } from '@ember/service';
 import layout from '../templates/components/hero-fullpage';
 
-export default Ember.Component.extend({
+export default Component.extend({
   layout,
-  joda: Ember.inject.service(),
+  joda: service(),
 
   tagName: 'section',
   classNames: ['hero', 'is-primary', 'is-fullheight', 'has-gradient'],

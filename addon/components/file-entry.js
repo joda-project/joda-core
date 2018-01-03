@@ -1,7 +1,7 @@
-import Ember from 'ember';
+import Component from '@ember/component';
 import layout from '../templates/components/file-entry';
 
-const FileEntry = Ember.Component.extend({
+const FileEntry = Component.extend({
   layout,
   tagName: 'article',
   classNames: ['media', 'is-vertical-centered']

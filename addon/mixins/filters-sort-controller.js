@@ -1,6 +1,7 @@
-import Ember from 'ember';
+import Mixin from '@ember/object/mixin';
+import { observer } from '@ember/object';
 
-export default Ember.Mixin.create({
+export default Mixin.create({
   sort: null,
   sortSelected: null,
   sortTypes: [
@@ -22,7 +23,7 @@ export default Ember.Mixin.create({
     }
   ],
 
-  sortObserver: Ember.observer('sort', function() {
+  sortObserver: observer('sort', function() {
     let sort = this.get('sort');
     if (!sort) {
       this.set('sort', null);
@@ -47,7 +48,7 @@ export default Ember.Mixin.create({
     }
   }),
 
-  sortSelectedObserver: Ember.observer('sortSelected', function() {
+  sortSelectedObserver: observer('sortSelected', function() {
     let selected = this.get('sortSelected');
     this.set('sort', selected ? selected.id : null);
   })

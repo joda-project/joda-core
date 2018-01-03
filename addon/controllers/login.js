@@ -1,8 +1,9 @@
-import Ember from 'ember';
+import Controller from '@ember/controller';
+import { inject as service } from '@ember/service';
 
-export default Ember.Controller.extend({
-  session: Ember.inject.service(),
-  joda: Ember.inject.service(),
+export default Controller.extend({
+  session: service(),
+  joda: service(),
 
   displayErrorMessage: function(error) {
     switch (error) {

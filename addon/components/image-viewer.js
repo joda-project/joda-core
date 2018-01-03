@@ -1,8 +1,9 @@
 /* global ImageViewer */
-import Ember from 'ember';
+import Component from '@ember/component';
+import { observer } from '@ember/object';
 import layout from '../templates/components/image-viewer';
 
-export default Ember.Component.extend({
+export default Component.extend({
   layout,
   classNames: ['object-wrapper'],
 
@@ -20,7 +21,7 @@ export default Ember.Component.extend({
     viewer.load(image);
   },
 
-  imageObserver: Ember.observer('image', function() {
+  imageObserver: observer('image', function() {
     this.get('viewer').load(this.get('image'));
   })
 });

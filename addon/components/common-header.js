@@ -1,11 +1,12 @@
-import Ember from 'ember';
+import Component from '@ember/component';
+import { inject as service } from '@ember/service';
 import layout from '../templates/components/common-header';
 
-export default Ember.Component.extend({
+export default Component.extend({
   layout,
-  session: Ember.inject.service(),
-  currentUser: Ember.inject.service(),
-  joda: Ember.inject.service(),
+  session: service(),
+  currentUser: service(),
+  joda: service(),
 
   tagName: 'section',
   classNames: ['hero', 'is-primary'],

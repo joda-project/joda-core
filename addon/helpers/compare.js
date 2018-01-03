@@ -1,4 +1,4 @@
-import Ember from 'ember';
+import { helper } from '@ember/component/helper';
 
 const operators = {
   '==': function(l, r) {
@@ -40,4 +40,4 @@ export function compare([left, operator, right]) {
   return operators[operator](left, right);
 }
 
-export default Ember.Helper.helper(compare);
+export default helper(compare);

@@ -1,8 +1,9 @@
-import Ember from 'ember';
 import PowerSelect from 'ember-power-select/components/power-select';
+import { inject as service } from '@ember/service';
+import { isBlank } from '@ember/utils';
 
 export default PowerSelect.extend({
-  store: Ember.inject.service(),
+  store: service(),
   allowClear: true,
 
   init() {
@@ -17,7 +18,7 @@ export default PowerSelect.extend({
     }
 
     if (event.keyCode === 13) {
-      if (select.isOpen && !select.highlighted && !Ember.isBlank(select.searchText)) {
+      if (select.isOpen && !select.highlighted && !isBlank(select.searchText)) {
         let store = this.get('store');
         let options = select.options;
         if (!options.includes(select.searchText)) {

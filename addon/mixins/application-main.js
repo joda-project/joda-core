@@ -1,13 +1,14 @@
-import Ember from 'ember';
+import Mixin from '@ember/object/mixin';
+import { inject as service } from '@ember/service';
 import config from 'ember-get-config';
 
 const {
   Joda
 } = config;
 
-export default Ember.Mixin.create({
-  currentUser: Ember.inject.service(),
-  joda: Ember.inject.service(),
+export default Mixin.create({
+  currentUser: service(),
+  joda: service(),
 
   title: function(tokens) {
     const base = Joda.appName;

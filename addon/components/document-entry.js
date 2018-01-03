@@ -1,9 +1,10 @@
-import Ember from 'ember';
+import Component from '@ember/component';
+import { inject as service } from '@ember/service';
 import layout from '../templates/components/document-entry';
 
-const DocumentEntry = Ember.Component.extend({
+const DocumentEntry = Component.extend({
   layout,
-  session: Ember.inject.service(),
+  session: service(),
   tagName: 'article',
   classNames: ['media', 'is-vertical-centered']
 });

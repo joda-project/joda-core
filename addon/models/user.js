@@ -1,5 +1,6 @@
-import Ember from 'ember';
 import DS from 'ember-data';
+import { computed } from '@ember/object';
+import { htmlSafe } from '@ember/string';
 
 export default DS.Model.extend({
   username: DS.attr('string'),
@@ -10,7 +11,7 @@ export default DS.Model.extend({
   remoteAvatar: DS.attr('boolean'),
   gravatar: DS.attr('string'),
 
-  displayName: Ember.computed('username', 'firstName', 'lastName', function() {
+  displayName: computed('username', 'firstName', 'lastName', function() {
     let first = this.get('firstName');
     let last = this.get('lastName');
 
@@ -24,14 +25,14 @@ export default DS.Model.extend({
     return this.get('username');
   }),
 
-  hasAvatar: Ember.computed('remoteAvatar', 'gravatar', function() {
+  hasAvatar: computed('remoteAvatar', 'gravatar', function() {
     return this.get('remoteAvatar') && this.get('gravatar');
   }),
-  gravatarSmallBkg: Ember.computed('gravatar', function() {
+  gravatarSmallBkg: computed('gravatar', function() {
     let url = this.get('gravatar') + 80;
-    return Ember.String.htmlSafe(`background-image:url(${url});`);
+    return htmlSafe(`background-image:url(${url});`);
   }),
-  gravatarLarge: Ember.computed('gravatar', function() {
-    return Ember.String.htmlSafe(this.get('gravatar') + 192);
+  gravatarLarge: computed('gravatar', function() {
+    return htmlSafe(this.get('gravatar') + 192);
   })
 })

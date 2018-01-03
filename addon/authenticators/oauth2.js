@@ -1,5 +1,6 @@
-import Ember from 'ember';
 import OAuth2PasswordGrant from 'ember-simple-auth/authenticators/oauth2-password-grant';
+import { computed } from '@ember/object';
+import { isEmpty } from '@ember/utils';
 import config from 'ember-get-config';
 
 const {
@@ -9,10 +10,10 @@ const {
 export default OAuth2PasswordGrant.extend({
   clientId: Joda.authKey,
 
-  _clientIdHeader: Ember.computed('clientId', function() {
+  _clientIdHeader: computed('clientId', function() {
     const clientId = this.get('clientId');
 
-    if (!Ember.isEmpty(clientId)) {
+    if (!isEmpty(clientId)) {
       return {
         Authorization: `Basic ${clientId}`
       };

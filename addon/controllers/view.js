@@ -1,11 +1,13 @@
-import Ember from 'ember';
+import Controller from '@ember/controller';
+import { observer } from '@ember/object';
+import { inject as service } from '@ember/service';
 
-export default Ember.Controller.extend({
-  session: Ember.inject.service(),
-  ajax: Ember.inject.service(),
-  joda: Ember.inject.service(),
+export default Controller.extend({
+  session: service(),
+  ajax: service(),
+  joda: service(),
 
-  fileNameObserver: Ember.observer('model', function() {
+  fileNameObserver: observer('model', function() {
     let backendUri = this.get('joda.backendUri');
     let model = this.get('model');
     let mimeType = model.get('mimeType');

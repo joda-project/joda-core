@@ -1,18 +1,19 @@
-import Ember from 'ember';
+import Service, { inject as service } from '@ember/service';
+import { computed } from '@ember/object';
+import { htmlSafe } from '@ember/string';
 import config from 'ember-get-config';
 
 const {
   Joda
 } = config;
 
-export default Ember.Service.extend({
-  ajax: Ember.inject.service(),
+export default Service.extend({
+  ajax: service(),
 
   appName: Joda.appName,
-  backendUri: Joda.backendUri ? Joda.backendUri : '',
-  copyright: Ember.String.htmlSafe(Joda.copyright),
+  copyright: htmlSafe(Joda.copyright),
   versionFrontend: Joda.versions['joda-core'],
-  versionBackend: Ember.computed('backendInfo', function() {
+  versionBackend: computed('backendInfo', function() {
     let backendInfo = this.get('backendInfo');
     if (!backendInfo) {
       return '';
@@ -24,19 +25,21 @@ export default Ember.Service.extend({
   versionsInfo: Joda.versions,
   featuresInfo: Joda.features,
 
+  backendUri: '',
   backendInfo: null,
 
   init() {
     this._super(...arguments);
+    this.backendUri = Joda.backendUri ? Joda.backendUri : '';
     this.get('ajax').request((Joda.backendUri ? Joda.backendUri : '') + '/api/about').then((data) => {
-      this.set('backendInfo', data['data']);
+      this.backendInfo = data['data'];
     });
   },
 
-  branded: Ember.computed('appName', function() {
+  branded: computed('appName', function() {
     return this.get('appName') !== 'Joda';
   }),
-  links: Ember.computed('featuresInfo', function() {
+  links: computed('featuresInfo', function() {
     let features = this.get('featuresInfo');
     let out = [];
     for (let feature in features) {
@@ -48,7 +51,7 @@ export default Ember.Service.extend({
     }
     return out;
   }),
-  features: Ember.computed('featuresInfo', 'backendInfo', function() {
+  features: computed('featuresInfo', 'backendInfo', function() {
     let features = this.get('featuresInfo');
     let versions = this.get('versionsInfo');
     let backend = this.get('backendInfo');

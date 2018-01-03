@@ -1,12 +1,14 @@
-import Ember from 'ember';
+import Route from '@ember/routing/route';
+import { hash } from 'rsvp';
+import { inject as service } from '@ember/service';
 import { translationMacro as t } from "ember-i18n";
 
-export default Ember.Route.extend({
+export default Route.extend({
   titleToken: t('common.manage'),
-  i18n: Ember.inject.service(),
+  i18n: service(),
 
   model() {
-    return Ember.RSVP.hash({
+    return hash({
       documents: this.get('store').query('document', {
         'include': 'files',
         'verified': false,

@@ -1,7 +1,7 @@
-import Ember from 'ember';
+import Component from '@ember/component';
 import layout from '../templates/components/tag-label';
 
-const TagLabel = Ember.Component.extend({
+const TagLabel = Component.extend({
   layout,
   tagName: 'span',
   classNames: ['tag']

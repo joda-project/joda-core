@@ -1,7 +1,8 @@
-import Ember from 'ember';
+import { inject as service } from '@ember/service';
+import { isEmpty } from '@ember/utils'
+import { translationMacro as t } from "ember-i18n";
 import EmberUploader from 'ember-uploader';
 import config from 'ember-get-config';
-import { translationMacro as t } from "ember-i18n";
 
 const {
   Joda
@@ -31,17 +32,20 @@ function typeMap(type) {
 }
 
 export default EmberUploader.FileField.extend({
-  session: Ember.inject.service(),
-  i18n: Ember.inject.service(),
+  session: service(),
+  i18n: service(),
   url: (Joda.backendUri ? Joda.backendUri : '') + '/api/files',
   multiple: true,
-
-  supportedTypes: [
-    'application/pdf',
-    'image/jpeg',
-    'image/png'
-  ],
   supportedSize: 314572800,
+
+  init() {
+    this.supportedTypes = [
+      'application/pdf',
+      'image/jpeg',
+      'image/png'
+    ];
+    this._super(...arguments);
+  },
 
   filesDidChange: function(files) {
     this.set('errorMessage', '');
@@ -70,7 +74,7 @@ export default EmberUploader.FileField.extend({
       return;
     }
 
-    if (Ember.isEmpty(files) || !valid) {
+    if (isEmpty(files) || !valid) {
       return;
     }
 
@@ -91,11 +95,10 @@ export default EmberUploader.FileField.extend({
         file_types: types,
         document_type: documentType
       }).then((data) => {
-        this.sendAction('action', data);
+        this.action(data);
       }).catch(() => {
         this.set('errorMessage', t('common.error.generic'));
       });
     });
-
   }
 });

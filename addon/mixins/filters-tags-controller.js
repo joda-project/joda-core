@@ -1,10 +1,11 @@
-import Ember from 'ember';
+import Mixin from '@ember/object/mixin';
+import { observer } from '@ember/object';
 
-export default Ember.Mixin.create({
+export default Mixin.create({
   tags: null,
   tagsList: [],
 
-  tagsObserver: Ember.observer('tags', function() {
+  tagsObserver: observer('tags', function() {
     let tags = this.get('tags');
     if (!tags) {
       this.set('tagsList', []);
@@ -20,7 +21,7 @@ export default Ember.Mixin.create({
     this.set('tagsList', result);
   }),
 
-  tagsListObserver: Ember.observer('tagsList', function() {
+  tagsListObserver: observer('tagsList', function() {
     let list = [];
     for (let tag of this.get('tagsList')) {
       if (tag) {

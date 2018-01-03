@@ -1,7 +1,7 @@
-import Ember from 'ember';
+import Component from '@ember/component';
 import layout from '../templates/components/file-icon-link';
 
-const FileIconLink = Ember.Component.extend({
+const FileIconLink = Component.extend({
   layout,
   classNames: ['media-file']
 });
