@@ -30,7 +30,7 @@ test('it renders', function(assert) {
   let render = '';
   render += 'Joda Test powered by Joda ' + config.Joda.versions['joda-core'] + '                            Administration';
 
-  assert.equal(this.$().text().trim().replace(/\n+/g, ''), "© 2016 Tadej Novak" + spacer + render);
+  assert.equal(this.$().text().trim().replace(/\n+/g, ''), "© 2018 Tadej Novak" + spacer + render);
 
   // Template block usage:
   this.render(hbs `

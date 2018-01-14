@@ -7,7 +7,7 @@ module.exports = {
   config: function() {
     let joda = {
       appName: 'Joda',
-      copyright: '&copy; 2016 Tadej Novak',
+      copyright: '&copy; 2018 Tadej Novak',
       color: '#207178',
       features: {},
       versions: {},

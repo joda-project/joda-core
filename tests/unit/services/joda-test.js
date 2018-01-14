@@ -28,7 +28,7 @@ test('should correctly display constants', function(assert) {
   let service = this.subject();
 
   assert.equal(service.get('appName'), 'Joda Test');
-  assert.equal(service.get('copyright').toHTML(), '&copy; 2016 Tadej Novak');
+  assert.equal(service.get('copyright').toHTML(), '&copy; 2018 Tadej Novak');
 
   assert.equal(service.get('branded'), true);
 

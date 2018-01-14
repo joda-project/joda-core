@@ -17,7 +17,7 @@ There are several guidelines on contributing to Joda:
  * [Building instructions](BUILDING.md)
 
 ## Copyright info
-Copyright (C) 2016-2017 Tadej Novak
+Copyright (C) 2016-2018 Tadej Novak
 
 This project may be used under the terms of the
 GNU Affero General Public License version 3.0 as published by the

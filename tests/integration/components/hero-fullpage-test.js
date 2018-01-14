@@ -24,7 +24,7 @@ test('it renders', function(assert) {
 
   this.render(hbs `{{hero-fullpage}}`);
 
-  assert.equal(this.$().text().trim(), "© 2016 Tadej Novak");
+  assert.equal(this.$().text().trim(), "© 2018 Tadej Novak");
 
   // Template block usage:
   this.render(hbs `
@@ -33,5 +33,5 @@ test('it renders', function(assert) {
     {{/hero-fullpage}}
   `);
 
-  assert.equal(this.$().text().trim().replace(/\n+/g, ''), 'template block text              © 2016 Tadej Novak');
+  assert.equal(this.$().text().trim().replace(/\n+/g, ''), 'template block text              © 2018 Tadej Novak');
 });
