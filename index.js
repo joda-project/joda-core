@@ -11,8 +11,8 @@ module.exports = {
       color: '#207178',
       features: {},
       versions: {},
-      backendUri: process.env.BACKEND_URI,
-      authKey: process.env.AUTH_KEY
+      backendUri: '',
+      authKey: ''
     };
 
     let path = this.project.root;
