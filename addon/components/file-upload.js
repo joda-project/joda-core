@@ -1,7 +1,9 @@
+import { defineProperty } from '@ember/object';
 import { inject as service } from '@ember/service';
-import { isEmpty } from '@ember/utils'
+import { isEmpty, isPresent } from '@ember/utils'
 import { translationMacro as t } from "ember-i18n";
-import EmberUploader from 'ember-uploader';
+import FileField from 'ember-uploader/components/file-field';
+import Uploader from 'ember-uploader/uploaders/uploader';
 import config from 'ember-get-config';
 
 const {
@@ -31,7 +33,7 @@ function typeMap(type) {
   }
 }
 
-export default EmberUploader.FileField.extend({
+export default FileField.extend({
   session: service(),
   i18n: service(),
   url: (Joda.backendUri ? Joda.backendUri : '') + '/api/files',
@@ -78,27 +80,33 @@ export default EmberUploader.FileField.extend({
       return;
     }
 
-    this.get('session').authorize('authorizer:oauth2', (headerName, headerValue) => {
-      const headers = {};
-      headers[headerName] = headerValue;
+    const headers = {};
 
-      const uploader = EmberUploader.Uploader.create({
-        url: this.get('url'),
-        ajaxSettings: {
-          headers: headers
-        }
-      });
-      uploader.on('progress', (event) => {
-        this.set('progress', event.percent);
-      });
-      uploader.upload(files, {
-        file_types: types,
-        document_type: documentType
-      }).then((data) => {
-        this.action(data);
-      }).catch(() => {
-        this.set('errorMessage', t('common.error.generic'));
-      });
+    let { access_token } = this.get('session.data.authenticated');
+    if (isPresent(access_token)) {
+      headers['Authorization'] = `Bearer ${access_token}`;
+    }
+
+    const uploader = Uploader.create({
+      url: this.get('url'),
+      ajaxSettings: {
+        headers: headers
+      }
+    });
+
+    uploader.on('progress', (event) => {
+      this.set('progress', event.percent);
+    });
+    uploader.on('didUpload', (data) => {
+      this.get('onCompleted')(data);
+    });
+    uploader.on('didError', () => {
+      defineProperty(this, 'errorMessage', t('common.error.generic'));
+    });
+
+    uploader.upload(files, {
+      file_types: types,
+      document_type: documentType
     });
   }
 });

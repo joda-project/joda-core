@@ -1,3 +1,5 @@
+/* eslint-disable node/no-unpublished-require */
+
 'use strict';
 
 var getVersion = require('git-repo-version');

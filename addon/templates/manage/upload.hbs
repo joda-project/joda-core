@@ -16,7 +16,7 @@
     </p>
 
     <label class="label">{{t 'files.files'}}</label>
-    <p class="control">{{file-upload action="uploadCompleted" errorMessage=errorMessage progress=progress documentType=documentType }}</p>
+    <p class="control">{{file-upload onCompleted=(action 'uploadCompleted') errorMessage=errorMessage progress=progress documentType=documentType }}</p>
     <p>&nbsp;</p>
 
     {{#if errorMessage}}
